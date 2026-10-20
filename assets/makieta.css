@@ -216,8 +216,8 @@ h1, h2 { line-height: 1.15; }
   font-variant-numeric: tabular-nums;
 }
 .numer__opis { font-size: .9rem; line-height: 1.35; color: var(--nb-tekst-drugi); }
-.numer__cyfry { transition: color .15s; }
-.numer:hover .numer__cyfry { color: var(--nb-pomarancz); }
+/* Wyjątek od zasady pomarańczowego tekstu (Ada 2026-10-21): numery kryzysowe podkreślają się po najechaniu. */
+.numer:hover .numer__cyfry { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px; }
 .numer:focus-visible { outline: 3px solid var(--nb-zielen-przycisk); outline-offset: 2px; }
 .numer--alarm .numer__cyfry { color: var(--nb-pomarancz-przycisk); }
 
