@@ -5,7 +5,7 @@ Co zrobiłyśmy, co jest w toku i co dalej. Najnowsze na górze. Statusy: **zrob
 ## Zasady makiety (od 2026-10-20)
 
 - Makieta pokazuje tylko nasze zmiany. Oryginalnej treści strony jeszcze w niej nie ma.
-- Klikalne są tylko 3 kafelki i logo. Reszta (menu, wyszukiwarka, stopka) jest widoczna, ale wyłączona.
+- Klikalne są tylko 3 kafelki, logo i numery kryzysowe. Reszta (menu, wyszukiwarka, stopka) jest widoczna, ale wyłączona.
 - Strona główna makiety to strona z 3 kafelkami („Jak możemy Ci pomóc?”).
 
 ## 2026-10-20, uwagi Ady do pierwszej wersji
