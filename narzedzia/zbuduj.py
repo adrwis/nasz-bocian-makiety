@@ -52,6 +52,23 @@ STRONA = """<!doctype html>
 """
 
 
+# Spójniki i jednoliterowe słowa nie zostają na końcu wiersza (Ada 2026-10-21):
+# po nich zwykłą spację zamieniamy na twardą. Zmienia się tylko łamanie wierszy, nie tekst.
+SIEROTY = re.compile(r"(?<![\w\u00C0-\u017F])(i|a|o|u|w|z|oraz|albo|lub|czy|ani|ale|bo|że|czyli|I|A|O|U|W|Z|Oraz|Albo|Lub|Czy|Ani|Ale|Bo|Że|Czyli) (?=\S)")
+
+
+def bez_sierot(html_):
+    czesci = re.split(r"(<[^>]+>)", html_)
+    wynik, w_skrypcie = [], False
+    for c in czesci:
+        if c.startswith("<"):
+            w_skrypcie = c.lower().startswith(("<script", "<style")) or (w_skrypcie and not c.lower().startswith(("</script", "</style")))
+            wynik.append(c)
+        else:
+            wynik.append(c if w_skrypcie else SIEROTY.sub(lambda m: m.group(1) + "\u00a0", c))
+    return "".join(wynik)
+
+
 def czytaj(sciezka):
     return (ROOT / sciezka).read_text(encoding="utf-8")
 
@@ -88,7 +105,7 @@ def zbuduj():
         nag = naglowek.replace(f'href="{{{{root}}}}{slug}/"', f'href="{{{{root}}}}{slug}/" aria-current="page"')
         html = STRONA.format(tytul=tytul, root=root, naglowek=nag, tresc=tresc, stopka=stopka,
                              klasa="strona-glowna" if slug == "index" else "", wersja=wersja)
-        cel.write_text(html.replace("{{root}}", root), encoding="utf-8")
+        cel.write_text(bez_sierot(html.replace("{{root}}", root)), encoding="utf-8")
         print(f"Zapisano {cel.relative_to(ROOT)}")
 
 if __name__ == "__main__":

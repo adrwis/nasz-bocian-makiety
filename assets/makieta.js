@@ -46,3 +46,31 @@ document.addEventListener('DOMContentLoaded', () => {
     zakoncz('wszystkie');
   });
 });
+
+// Program in vitro: wyszukiwanie w pytaniach (bez polskich znaków i wielkości liter).
+document.addEventListener('DOMContentLoaded', () => {
+  const pole = document.getElementById('faq-pole');
+  if (!pole) return;
+  const norm = (t) => t.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/ł/g, 'l');
+  const pytania = [...document.querySelectorAll('.faq')].map((el) => ({ el, tekst: norm(el.textContent) }));
+  const tematy = [...document.querySelectorAll('.temat')];
+  const licznik = document.getElementById('faq-licznik');
+  const brak = document.getElementById('faq-brak');
+  const poczatkowy = licznik.textContent;
+  const odmiana = (n) => (n === 1 ? 'pytanie' : n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 10 || n % 100 >= 20) ? 'pytania' : 'pytań');
+  pole.addEventListener('input', () => {
+    const slowa = norm(pole.value).split(/\s+/).filter(Boolean);
+    let ile = 0;
+    pytania.forEach((p) => {
+      const pasuje = slowa.every((s) => p.tekst.includes(s));
+      p.el.hidden = !pasuje;
+      if (pasuje) ile += 1;
+    });
+    tematy.forEach((t) => { t.hidden = !t.querySelector('.faq:not([hidden])'); });
+    document.querySelectorAll('.tematy a').forEach((a) => {
+      a.hidden = document.querySelector(a.getAttribute('href')).hidden;
+    });
+    licznik.textContent = slowa.length ? `Znaleziono ${ile} ${odmiana(ile)}` : poczatkowy;
+    brak.hidden = ile > 0;
+  });
+});

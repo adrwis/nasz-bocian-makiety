@@ -13,6 +13,9 @@ Co zrobiłyśmy, co jest w toku i co dalej. Najnowsze na górze. Statusy: **zrob
 
 | # | Uwaga Ady | Co robimy | Status |
 |---|---|---|---|
+| 41 | Spójniki i pojedyncze litery nie mogą zostawać na końcu wiersza. | Skrypt budujący wstawia twardą spację po spójnikach (i, a, oraz, albo, lub, czy, ani, ale, bo, że, czyli) i jednoliterowych słowach (o, u, w, z) na wszystkich stronach, także przyszłych. Tekst się nie zmienia, tylko łamanie wierszy. Zasada w `branding/BRANDING.md`. | zrobione |
+| 40 | Strona programu po kliknięciu „Dowiedz się więcej”: treść z oryginalnej strony, wygląd w naszym stylu (obecna wersja jest „zbyt claudowa”). | Nowa strona `/program-in-vitro/` (skrypt `narzedzia/program.py`). Treść bez zmian, sprawdzona automatycznie: 6 najważniejszych faktów, 6 ścieżek „Od czego zaczynasz?”, 384 pytania w 13 tematach, 3 dokumenty, 17 artykułów, 7 nagrań. Wygląd: płaskie karty faktów, ścieżki bez emoji, pytania jako rozwijane wiersze, wyszukiwarka pytań działająca na żywo (bez polskich znaków), lista tematów z liczbą pytań, pliki PDF, artykuły i nagrania w liście z datami. Artykuły, które w oryginale były dwa razy (kafelki i lista), są w jednej liście. Adresy e-mail z Cloudflare odszyfrowane. | zrobione |
+| 39 | Na stronie głównej czwarty kafelek „Rządowy program in vitro”, pierwszy od lewej, z przyciskiem „Dowiedz się więcej”. | Kafelek dodany jako pierwszy. Zdjęcie CC0 bez twarzy: dłoń w rękawiczce przy pipecie w laboratorium (wersja bez znaku wodnego, źródło w `dokumenty/zdjecia.md`). Opis z oryginalnej strony programu. Na komputerze 4 kafelki w rzędzie, na tablecie 2, na telefonie 1. Napisy na przyciskach zawsze w jednej linii. | zrobione |
 | 38 | W dopisku „z poprawionymi błędami” zamienić błędy na poprawki. | Dopisek na poprawionych stronach brzmi teraz: „Tekst przeniesiony ze strony nasz-bocian.pl, z poprawkami (lista poprawek)”. | zrobione |
 | 37 | Słowa nie mają się dzielić, całe słowo przechodzi do następnej linii. Na wszystkich stronach. | Wyłączone automatyczne dzielenie wyrazów na całej makiecie. Teksty w dokumentach zostają wyjustowane. Zasada w `branding/BRANDING.md`. | zrobione |
 | 36 | Podmienić na IG i EF. | „Szukam informacji”: IG (laptop na kolanach, ujęcie zza ramienia). „Ekspert”: EF (dwie osoby przy biurku, widać tylko dłonie). Na stronie głównej nie ma już zdjęć z Freepika, więc problem z podpisem autora zniknął. | zrobione |
@@ -96,8 +99,11 @@ Co zrobiłyśmy, co jest w toku i co dalej. Najnowsze na górze. Statusy: **zrob
 
 | Co | Status |
 |---|---|
-| Strona główna nasz-bocian.pl (pierwszy ekran z drogą do pomocy, baner refundacji niżej) | do zrobienia |
 | Strony docelowe kafelków w makiecie (Szukam informacji, Linia pomocy, Kontakt) | do zrobienia |
+| Strony działów z menu (Niepłodność, Adopcja itd.), teraz „w przygotowaniu” | do zrobienia |
+| Na telefonie: czy dokumenty wyrównać do lewej zamiast justowania (duże odstępy w wąskiej kolumnie) | do decyzji Ady |
+| Projekt nowej polityki prywatności do weryfikacji przez prawnika | do decyzji Ady |
+| „384 pytań” na stronie programu (powinno być „384 pytania”), przenieść do listy poprawek | do zrobienia |
 | Doprecyzować `dokumenty/jak-mozemy-ci-pomoc/dla-redaktora.md` po screenach formularza edycji z dev | do zrobienia |
 | Po akceptacji wyglądu przygotować CSS dla programisty pod nowy nagłówek, kafle i stopkę (obecny `poprawki.css` dotyczy pierwszej wersji) | do zrobienia |
 
