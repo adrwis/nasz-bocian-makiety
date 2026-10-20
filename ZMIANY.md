@@ -13,7 +13,7 @@ Co zrobiłyśmy, co jest w toku i co dalej. Najnowsze na górze. Statusy: **zrob
 | # | Uwaga Ady | Co robimy | Status |
 |---|---|---|---|
 | 23 | Kliknięcie np. „Ustawienia cookies” ma otwierać stronę w nowej makiecie (wygląd nowej strony głównej), a w środku tekst z oryginalnych cookies. Estetycznie, z frontend-design. | Nowa strona `/ustawienia-cookies/`. Tekst 1:1 z banera cookies na nasz-bocian.pl (wstęp, 5 kategorii z opisami, przyciski, zdanie o 365 dniach). Kategorie w płaskim panelu z przełącznikami, „Niezbędne” oznaczone „Zawsze włączone”. Trzy przyciski decyzji o równej wadze (na obecnej stronie „Odrzuć” to szary tekst, co lipcowy audyt wskazał jako ryzyko prawne). W makiecie wybór nie jest zapisywany, strona tylko to potwierdza. „Polityka prywatności” prowadzi na nasz-bocian.pl. | zrobione |
-| 24 | Pozostałe strony ze stopki w tym samym stylu (Ogłoszenia, Reklamy, Nota prawna, Zasady korzystania, Regulamin płatności, Współpraca z biznesem, Współpraca z partiami). | Ten sam szablon dokumentu z oryginalnym tekstem. | do decyzji Ady |
+| 24 | Pozostałe klikalne strony ze stopki zrobić tak samo. | 7 nowych stron: `/ogloszenia-nieodplatne/`, `/reklamy/`, `/nota-prawna/`, `/zasady-korzystania-z-serwisu/`, `/regulamin-platnosci/`, `/wspolpraca-z-biznesem/`, `/wspolpraca-z-partiami-politycznymi/`. Tekst słowo w słowo z nasz-bocian.pl (sprawdzone automatycznie), wygląd nowej makiety: kolumna do czytania, nagłówki sekcji z linią, numery list w kolorze marki. Długie dokumenty mają spis treści „Na tej stronie”. Usunięte tylko puste elementy z edytora. Adresy e-mail, które Cloudflare szyfruje, są zapisane jawnie i klikalne. Na dole każdej strony link do oryginału. Linki między tymi stronami (np. „Polityka prywatności” z cookies) prowadzą w obrębie makiety. Skrypt: `narzedzia/dokumenty.py`. Newsletter nadal otwiera formularz MailerLite. | zrobione |
 
 ## 2026-10-21, uwagi Ady do czwartej wersji
 
@@ -76,6 +76,17 @@ Co zrobiłyśmy, co jest w toku i co dalej. Najnowsze na górze. Statusy: **zrob
 | Strony docelowe kafelków w makiecie (Szukam informacji, Linia pomocy, Kontakt) | do zrobienia |
 | Doprecyzować `dokumenty/jak-mozemy-ci-pomoc/dla-redaktora.md` po screenach formularza edycji z dev | do zrobienia |
 | Po akceptacji wyglądu przygotować CSS dla programisty pod nowy nagłówek, kafle i stopkę (obecny `poprawki.css` dotyczy pierwszej wersji) | do zrobienia |
+
+## Błędy w oryginalnych tekstach (do poprawy na produkcji)
+
+Teksty w makiecie są przeniesione bez zmian, więc te błędy są też w makiecie.
+
+| Strona | Problem |
+|---|---|
+| Zasady korzystania z serwisu | To jedyna „Polityka prywatności” na stronie (link z banera cookies), a opisuje głównie forum, którego już nie ma (przekierowuje na stronę główną). „Ostatnia aktualizacja: 25.05.2018.” Nie opisuje Google Analytics, Meta Pixel, MailerLite ani FaniMani, o których mówi baner cookies. Do aktualizacji, najlepiej z prawnikiem. |
+| Ogłoszenia nieodpłatne, Współpraca z biznesem, Współpraca z partiami | „odpisów 1% podatku”: od 2023 roku jest 1,5%. |
+| Regulamin wpłat FaniPay | Zdanie z błędami: „W przypadku wystąpienia konieczność zwrotu… przyjmujący wpłatę dokonana zwrotu”. Powinno być np. „W przypadku konieczności zwrotu… przyjmujący wpłatę dokona zwrotu”. |
+| Reklamy | Literówka „artkuł sponsorowany”. Tytuł strony w całości wersalikami (w źródle). |
 
 ## Do decyzji
 
