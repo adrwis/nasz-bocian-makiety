@@ -283,6 +283,8 @@ h1, h2 { line-height: 1.15; }
 
 .dokument__tresc { font-size: 1.0625rem; line-height: 1.7; overflow-wrap: anywhere; }
 .dokument__tresc > :first-child { margin-top: 0; }
+/* Wyjustowany tekst (Ada 2026-10-21). Dzielenie wyrazów zmniejsza dziury między słowami. */
+.dokument__tresc p, .dokument__tresc li { text-align: justify; hyphens: auto; -webkit-hyphens: auto; }
 .dokument__tresc p { margin: 0 0 1em; }
 .dokument__tresc h2 {
   margin: 2.2em 0 .7em;
@@ -574,6 +576,8 @@ h1, h2 { line-height: 1.15; }
   .tresc--dokument h1 { font-size: 1.5rem; }
   .tresc--dokument h1.h1--dlugi { font-size: 1.15rem; }
   .spis { padding: 16px; }
+  .dokument__tresc ol, .dokument__tresc ul { padding-left: 1.3em; }
+  .dokument__tresc li li { text-align: left; }
   .cookies__kategoria { padding: 16px; gap: 16px; }
   .cookies__kategoria:has(.cookies__zawsze) { flex-direction: column; align-items: flex-start; gap: 8px; }
   .cookies__przyciski { grid-template-columns: 1fr; padding: 16px; }

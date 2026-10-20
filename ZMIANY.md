@@ -13,6 +13,7 @@ Co zrobiłyśmy, co jest w toku i co dalej. Najnowsze na górze. Statusy: **zrob
 
 | # | Uwaga Ady | Co robimy | Status |
 |---|---|---|---|
+| 31 | Wyjustować teksty na stronach ze stopki (teraz poszarpany prawy brzeg). | Akapity i punkty list w dokumentach wyjustowane, z automatycznym dzieleniem wyrazów, żeby nie robiły się duże odstępy między słowami. Nagłówki i spis treści bez zmian. Na telefonie podpunkty list wyrównane do lewej (w wąskiej kolumnie justowanie robiło duże dziury). | zrobione |
 | 30 | Numery kryzysowe cofnąć: po najechaniu podkreślenie, jak wcześniej. | Przywrócone. Zapisane w brandingu jako wyjątek od zasady pomarańczowego tekstu. | zrobione |
 | 29 | Pomarańczowe podświetlenie się podoba: wprowadzić na każdej stronie makiety i stosować na kolejnych. | Na wszystkich stronach: menu (także bieżąca strona, zamiast paska), „Wyszukaj”, stopka, media społecznościowe, linki i spis treści w dokumentach. Zasada zapisana w `branding/BRANDING.md` (sekcja „Interakcje”) i w zasadach makiety na górze tego pliku. | zrobione |
 | 28 | Czarny tekst jest za mocny, zamienić na szary jak w „Wybierz, czego teraz potrzebujesz”. | Podstawowy kolor tekstu w brandingu zmieniony z `#292728` na `#5A5A5A` (cała makieta: nagłówki, akapity, menu, stopka). Na pomarańczowym pasie „Wesprzyj” tekst zostaje ciemny, bo szary byłby tam nieczytelny. | zrobione |
