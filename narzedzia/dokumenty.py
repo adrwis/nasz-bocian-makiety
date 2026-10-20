@@ -162,7 +162,7 @@ def zapisz(slug, sciezka):
     tekst = bez_lamania(tekst)
     oryginal = f'<a href="{PROD}{sciezka}" target="_blank" rel="noopener"><span class="adres">nasz-bocian.pl</span></a>'
     if slug in POPRAWKI:
-        zrodlo = (f"Tekst przeniesiony ze strony {oryginal}, z poprawionymi błędami "
+        zrodlo = (f"Tekst przeniesiony ze strony {oryginal}, z poprawkami "
                   '(<a href="https://github.com/adrwis/nasz-bocian-makiety/blob/main/dokumenty/poprawki-tekstow.md">lista poprawek</a>).')
     else:
         zrodlo = f"Tekst przeniesiony bez zmian ze strony {oryginal}."

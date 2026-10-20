@@ -13,6 +13,7 @@ Co zrobiłyśmy, co jest w toku i co dalej. Najnowsze na górze. Statusy: **zrob
 
 | # | Uwaga Ady | Co robimy | Status |
 |---|---|---|---|
+| 38 | W dopisku „z poprawionymi błędami” zamienić błędy na poprawki. | Dopisek na poprawionych stronach brzmi teraz: „Tekst przeniesiony ze strony nasz-bocian.pl, z poprawkami (lista poprawek)”. | zrobione |
 | 37 | Słowa nie mają się dzielić, całe słowo przechodzi do następnej linii. Na wszystkich stronach. | Wyłączone automatyczne dzielenie wyrazów na całej makiecie. Teksty w dokumentach zostają wyjustowane. Zasada w `branding/BRANDING.md`. | zrobione |
 | 36 | Podmienić na IG i EF. | „Szukam informacji”: IG (laptop na kolanach, ujęcie zza ramienia). „Ekspert”: EF (dwie osoby przy biurku, widać tylko dłonie). Na stronie głównej nie ma już zdjęć z Freepika, więc problem z podpisem autora zniknął. | zrobione |
 | 35 | Wybór zdjęć: ID i WA. Dla „eksperta” zdjęcie bez widocznych twarzy, dla „Szukam informacji” jeszcze opcje z osobą tyłem przy komputerze. | ID i WA na stronie głównej, zapisane w makiecie (`assets/zdjecia/`), źródła w `dokumenty/zdjecia.md`. Zdjęcia CC0 kadrowane na środku. Druga runda propozycji na `/propozycje-zdjec/`: IE do IH (tyłem przy komputerze, dłonie na laptopie) i EE do EH (rozmowa przy stole, widać tylko dłonie). | zrobione, wybór w uwadze 36 |
