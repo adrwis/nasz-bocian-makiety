@@ -246,6 +246,22 @@ h1, h2 { line-height: 1.15; }
 .w-przygotowaniu p { margin: 0 0 8px; color: var(--nb-tekst-drugi); }
 .w-przygotowaniu .kafel__przycisk { margin: 20px 0 0; }
 
+/* Strona z propozycjami zdjęć (robocza) */
+.propozycje { margin-top: 48px; }
+.propozycje > h2 { margin: 0 0 16px; font-size: 1.4rem; text-transform: uppercase; }
+.kafle--4 { grid-template-columns: repeat(4, 1fr); }
+.kafle--4 .kafel { pointer-events: none; }
+.kafle--4 .kafel__tekst h2 { font-size: 1.2rem; }
+.kafle--4 .kafel__tekst p { font-size: .9rem; }
+.kafle--4 .kafel__przycisk { font-size: .95rem; padding: 0 16px; min-height: 40px; }
+.propozycja { margin: 0; }
+.propozycja figcaption { margin-top: 8px; text-align: center; font-size: .95rem; }
+.propozycja figcaption a { color: var(--nb-zielen-ciemna); transition: color .15s; }
+.propozycja figcaption a:hover { color: var(--nb-pomarancz); }
+.propozycja figcaption strong { font-size: 1.2rem; color: var(--nb-pomarancz); }
+@media (max-width: 1200px) { .kafle--4 { grid-template-columns: repeat(2, 1fr); max-width: none; } }
+@media (max-width: 560px) { .kafle--4 { grid-template-columns: 1fr; } }
+
 /* Strony z dokumentem (np. ustawienia cookies): wąska kolumna tekstu */
 .dokument { max-width: 760px; margin: 8px auto 0; }
 .dokument__wstep { text-align: center; margin-bottom: 28px; }

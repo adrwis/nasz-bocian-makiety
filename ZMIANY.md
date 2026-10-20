@@ -13,6 +13,7 @@ Co zrobiłyśmy, co jest w toku i co dalej. Najnowsze na górze. Statusy: **zrob
 
 | # | Uwaga Ady | Co robimy | Status |
 |---|---|---|---|
+| 33 | Znaleźć zdjęcia stockowe, które nie wymagają licencji ani podpisu autora. | Unsplash, Pexels i Pixabay blokują automatyczne wyszukiwanie, więc szukane przez Openverse (wyszukiwarka z filtrem licencji), tylko CC0 ze StockSnap i rawpixel. Bez zdjęć z dziećmi i ciążą. Po 4 propozycje na każdy kafelek na stronie `/propozycje-zdjec/`, pokazane w prawdziwych kafelkach. | do wyboru Ady |
 | 32 | Adresy stron (np. www.nasz-bocian.pl w Nocie prawnej) zawsze w jednej linii. | Adresy stron i e-maile w dokumentach i tytułach nie łamią się ani nie dzielą (skrypt oznacza je automatycznie, 32 miejsca). Dopisek na dole skrócony do „Tekst przeniesiony bez zmian ze strony nasz-bocian.pl”, bo pełna ścieżka nie mieściła się w jednej linii. Zasada w `branding/BRANDING.md`. | zrobione |
 | 31 | Wyjustować teksty na stronach ze stopki (teraz poszarpany prawy brzeg). | Akapity i punkty list w dokumentach wyjustowane, z automatycznym dzieleniem wyrazów, żeby nie robiły się duże odstępy między słowami. Nagłówki i spis treści bez zmian. Na telefonie podpunkty list wyrównane do lewej (w wąskiej kolumnie justowanie robiło duże dziury). | zrobione |
 | 30 | Numery kryzysowe cofnąć: po najechaniu podkreślenie, jak wcześniej. | Przywrócone. Zapisane w brandingu jako wyjątek od zasady pomarańczowego tekstu. | zrobione |
