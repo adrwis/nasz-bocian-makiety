@@ -281,8 +281,11 @@ h1, h2 { line-height: 1.15; }
 .dokument .spis a { font-weight: 500; color: var(--nb-tekst); text-decoration: none; }
 .dokument .spis a:hover { color: var(--nb-pomarancz); }
 
-.dokument__tresc { font-size: 1.0625rem; line-height: 1.7; overflow-wrap: anywhere; }
+.dokument__tresc { font-size: 1.0625rem; line-height: 1.7; overflow-wrap: break-word; }
 .dokument__tresc > :first-child { margin-top: 0; }
+/* Adresy stron i e-maile zawsze w jednej linii, bez dzielenia (Ada 2026-10-21). */
+.adres { white-space: nowrap; hyphens: none; -webkit-hyphens: none; }
+
 /* Wyjustowany tekst (Ada 2026-10-21). Dzielenie wyrazów zmniejsza dziury między słowami. */
 .dokument__tresc p, .dokument__tresc li { text-align: justify; hyphens: auto; -webkit-hyphens: auto; }
 .dokument__tresc p { margin: 0 0 1em; }
@@ -309,7 +312,7 @@ h1, h2 { line-height: 1.15; }
   font-size: .9rem;
   color: var(--nb-tekst-drugi);
 }
-.dokument .dokument__zrodlo a { font-weight: 400; overflow-wrap: anywhere; }
+.dokument .dokument__zrodlo a { font-weight: 400; }
 
 /* Ustawienia cookies */
 .cookies {

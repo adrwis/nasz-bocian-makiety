@@ -146,15 +146,26 @@ def popraw(slug, tytul, tekst):
     return tytul, tekst
 
 
+ADRES = re.compile(r"[\w.+-]+@[\w-]+(?:\.[\w-]+)+|(?:https?://)?(?:www\.)?[\w-]+(?:\.[\w-]+)*\.(?:pl|com|org|eu|net)(?:/[^\s<]*)?")
+
+
+def bez_lamania(tekst):
+    """Adresy stron i e-maile zawsze w jednej linii (Ada 2026-10-21). Zmienia tylko tekst poza znacznikami."""
+    czesci = re.split(r"(<[^>]+>)", tekst)
+    return "".join(c if c.startswith("<") else ADRES.sub(lambda m: f'<span class="adres">{m.group(0)}</span>', c)
+                   for c in czesci)
+
+
 def zapisz(slug, sciezka):
     tytul, tekst, naglowki = tresc_artykulu(pobierz(PROD + sciezka))
     tytul, tekst = popraw(slug, tytul, tekst)
-    oryginal = f'<a href="{PROD}{sciezka}" target="_blank" rel="noopener">nasz-bocian.pl{html.escape(sciezka)}</a>'
+    tekst = bez_lamania(tekst)
+    oryginal = f'<a href="{PROD}{sciezka}" target="_blank" rel="noopener"><span class="adres">nasz-bocian.pl</span></a>'
     if slug in POPRAWKI:
-        zrodlo = (f"Tekst przeniesiony z {oryginal}, z poprawionymi błędami "
+        zrodlo = (f"Tekst przeniesiony ze strony {oryginal}, z poprawionymi błędami "
                   '(<a href="https://github.com/adrwis/nasz-bocian-makiety/blob/main/dokumenty/poprawki-tekstow.md">lista poprawek</a>).')
     else:
-        zrodlo = f"Tekst przeniesiony bez zmian z {oryginal}."
+        zrodlo = f"Tekst przeniesiony bez zmian ze strony {oryginal}."
     spis = ""
     if len(naglowki) >= 3:
         pozycje = "\n".join(f'          <li><a href="#{i}">{html.escape(t)}</a></li>' for i, t in naglowki)
@@ -168,7 +179,7 @@ def zapisz(slug, sciezka):
     strona = f"""<!-- tytul: {tytul} -->
 <main class="tresc tresc--dokument" id="tresc">
   <div class="wnetrze">
-    <h1{' class="h1--dlugi"' if len(tytul) > 60 else ''}>{html.escape(tytul)}</h1>
+    <h1{' class="h1--dlugi"' if len(tytul) > 60 else ''}>{bez_lamania(html.escape(tytul))}</h1>
     <article class="dokument dokument--tekst">
 {spis}      <div class="dokument__tresc">
 {tekst}
