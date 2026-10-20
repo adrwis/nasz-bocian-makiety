@@ -163,91 +163,60 @@ h1, h2 { line-height: 1.15; }
   margin: 0 24px 24px;
   padding: 0 28px;
   align-self: flex-start;
-  background: var(--nb-zielen-przycisk);
+  background: var(--nb-przycisk-zielony);
   color: #fff;
+  font-size: 1.1875rem; /* 19 px pogrubione: duży tekst, wystarcza kontrast 3:1 */
   font-weight: 700;
   text-transform: uppercase;
   text-decoration: none;
+  transition: background .15s;
 }
-.kafel:hover .kafel__przycisk { background: var(--nb-zielen-ciemna); }
-.kafel--wsparcie .kafel__przycisk { background: var(--nb-pomarancz-przycisk); }
-.kafel--wsparcie:hover .kafel__przycisk { background: #a33d08; }
+.kafel:hover .kafel__przycisk { background: var(--nb-zielen-hover); }
+.kafel--wsparcie .kafel__przycisk { background: var(--nb-przycisk-pomaranczowy); }
+.kafel--wsparcie:hover .kafel__przycisk { background: var(--nb-pomarancz-hover); }
 
-/* Pomoc od razu: ciepłe, spokojne tło, numery jako duże karty do dotknięcia */
+/* Pomoc od razu: zwarty, płaski panel. Tekst po lewej, numery po prawej. */
 .pomoc-teraz {
-  position: relative;
-  overflow: hidden;
-  margin-top: 56px;
-  padding: 48px 40px 40px;
-  border-radius: 24px;
-  background:
-    radial-gradient(circle at 8% 0%, rgba(243, 103, 23, .14), transparent 42%),
-    radial-gradient(circle at 100% 100%, rgba(30, 170, 120, .14), transparent 45%),
-    var(--nb-tlo-cieple);
-}
-.pomoc-teraz__naglowek { max-width: 640px; margin: 0 auto 32px; text-align: center; }
-.pomoc-teraz__znak {
-  display: inline-flex;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
   align-items: center;
-  justify-content: center;
-  width: 64px;
-  height: 64px;
-  margin-bottom: 14px;
-  border-radius: 50%;
-  background: var(--nb-tlo);
-  color: var(--nb-pomarancz-przycisk);
-  box-shadow: 0 6px 18px rgba(243, 103, 23, .18);
+  gap: 24px 40px;
+  margin-top: 40px;
+  padding: 22px 28px;
+  background: var(--nb-tlo-cieple);
+  border: 1px solid var(--nb-ramka);
+  border-left: 4px solid var(--nb-zielen-ciemna);
+  border-radius: 4px;
 }
-.pomoc-teraz__znak svg { width: 36px; height: 36px; }
-.pomoc-teraz h2 { margin: 0 0 10px; font-size: 1.9rem; font-weight: 700; }
-.pomoc-teraz__naglowek p { margin: 0; font-size: 1.1rem; color: var(--nb-tekst-drugi); }
-
+.pomoc-teraz h2 { margin: 0 0 6px; font-size: 1.3rem; font-weight: 700; }
+.pomoc-teraz__tekst p { margin: 0; font-size: .97rem; line-height: 1.45; color: var(--nb-tekst-drugi); }
 .pomoc-teraz__numery {
   list-style: none;
   margin: 0;
   padding: 0;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
 }
+.pomoc-teraz__numery li + li { border-left: 1px solid var(--nb-ramka); }
 .numer {
-  height: 100%;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  gap: 6px;
-  padding: 24px 24px 20px;
-  border: 1px solid var(--nb-ramka);
-  border-radius: 14px;
-  box-shadow: inset 0 4px 0 var(--nb-zielen-ciemna);
-  background: var(--nb-tlo);
+  gap: 2px;
+  padding: 4px 20px;
   color: var(--nb-tekst);
   text-decoration: none;
-  transition: transform .2s, box-shadow .2s;
 }
-.numer:hover { transform: translateY(-3px); box-shadow: inset 0 4px 0 var(--nb-zielen-ciemna), 0 12px 26px rgba(15, 110, 86, .14); }
-.numer:focus-visible { outline: 3px solid var(--nb-zielen-przycisk); outline-offset: 3px; }
 .numer__cyfry {
-  font-size: 2.3rem;
+  font-size: 1.6rem;
   font-weight: 700;
-  line-height: 1;
-  letter-spacing: .01em;
+  line-height: 1.1;
   color: var(--nb-zielen-ciemna);
   font-variant-numeric: tabular-nums;
 }
-.numer__opis { flex: 1; color: var(--nb-tekst-drugi); line-height: 1.4; }
-.numer__akcja {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  margin-top: 8px;
-  font-weight: 700;
-  color: var(--nb-zielen-ciemna);
-}
-.numer--alarm { box-shadow: inset 0 4px 0 var(--nb-pomarancz-przycisk); }
-.numer--alarm .numer__cyfry,
-.numer--alarm .numer__akcja { color: var(--nb-pomarancz-przycisk); }
-.numer--alarm:hover { box-shadow: inset 0 4px 0 var(--nb-pomarancz-przycisk), 0 12px 26px rgba(194, 73, 10, .16); }
+.numer__opis { font-size: .9rem; line-height: 1.35; color: var(--nb-tekst-drugi); }
+.numer:hover .numer__cyfry { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 4px; }
+.numer:focus-visible { outline: 3px solid var(--nb-zielen-przycisk); outline-offset: 2px; }
+.numer--alarm .numer__cyfry { color: var(--nb-pomarancz-przycisk); }
 
 /* Strona w przygotowaniu */
 .w-przygotowaniu {
@@ -315,32 +284,33 @@ h1, h2 { line-height: 1.15; }
 
 .stopka__kolumny {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 32px;
-  padding-top: 40px;
-  padding-bottom: 28px;
+  grid-template-columns: 1fr 1.2fr 1.3fr;
+  gap: 20px;
+  padding-top: 24px;
+  padding-bottom: 18px;
 }
 .stopka h2 {
-  margin: 0 0 12px;
-  font-size: .85rem;
+  margin: 0 0 6px;
+  font-size: .72rem;
   font-weight: 700;
+  line-height: 1.3;
   letter-spacing: .08em;
   text-transform: uppercase;
   color: var(--nb-tekst-drugi);
 }
-.stopka__kolumny p { margin: 0 0 12px; font-size: .97rem; }
+.stopka__kolumny p { margin: 0; font-size: .875rem; line-height: 1.45; }
+.stopka__kolumny p + p { margin-top: 4px; }
 .stopka__kolumny ul { list-style: none; margin: 0; padding: 0; }
-.stopka__kolumny li { margin: 0 0 8px; font-size: .97rem; }
-.stopka__kolumny a {
-  text-decoration: none;
-  background-image: linear-gradient(var(--nb-pomarancz), var(--nb-pomarancz));
-  background-size: 0 2px;
-  background-position: 0 100%;
-  background-repeat: no-repeat;
-  transition: background-size .2s;
+.stopka__kolumny li { margin: 0; font-size: .875rem; line-height: 1.45; }
+.stopka__kolumny li a { display: block; text-decoration: none; }
+.stopka__kolumny li a:hover,
+.stopka__kolumny p a {
+  text-decoration: underline;
+  text-decoration-color: var(--nb-pomarancz);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
 }
-.stopka__kolumny a:hover { background-size: 100% 2px; }
-.stopka__kolumny p a { font-weight: 600; }
+.stopka__kolumny p a:hover { color: var(--nb-pomarancz-przycisk); }
 
 /* Obserwuj nas: wyśrodkowane, ikony z nazwami w jednym rzędzie */
 .stopka__social {
@@ -348,8 +318,9 @@ h1, h2 { line-height: 1.15; }
   flex-direction: column;
   align-items: center;
   gap: 12px;
-  padding-top: 8px;
-  padding-bottom: 32px;
+  width: min(1232px, calc(100% - 48px));
+  padding: 16px 0 24px;
+  border-top: 1px solid var(--nb-ramka);
   text-align: center;
 }
 .stopka__social h2 { margin: 0; }
@@ -400,7 +371,7 @@ h1, h2 { line-height: 1.15; }
 @media (max-width: 1200px) {
   .menu a { padding-left: 8px; padding-right: 8px; font-size: 1rem; }
   .kafle { grid-template-columns: 1fr; max-width: 640px; margin: 0 auto; }
-  .pomoc-teraz__numery { grid-template-columns: 1fr; max-width: 640px; margin: 0 auto; }
+  .pomoc-teraz { grid-template-columns: 1fr; max-width: 640px; margin-left: auto; margin-right: auto; }
 }
 
 /* Telefon */
@@ -438,6 +409,7 @@ h1, h2 { line-height: 1.15; }
 
 @media (max-width: 560px) {
   .wnetrze, .stopka__wnetrze { padding-left: 16px; padding-right: 16px; }
+  .stopka__social { width: calc(100% - 32px); padding-left: 0; padding-right: 0; }
   .wstep { margin-bottom: 28px; }
   .szukaj { padding-left: 14px; }
   .szukaj input { padding: 12px 8px; font-size: 1rem; }
@@ -445,12 +417,13 @@ h1, h2 { line-height: 1.15; }
   .szukaj__podpowiedz { padding-left: 14px; }
   .kafel__tekst h2 { font-size: 1.5rem; }
   .kafel__przycisk { align-self: stretch; }
-  .pomoc-teraz { margin-top: 40px; padding: 32px 16px 16px; border-radius: 20px; }
-  .pomoc-teraz h2 { font-size: 1.5rem; }
-  .numer { padding: 20px; }
-  .numer__cyfry { font-size: 2rem; }
+  .pomoc-teraz { padding: 18px 16px; }
+  .pomoc-teraz__numery { grid-template-columns: 1fr; }
+  .pomoc-teraz__numery li + li { border-left: 0; border-top: 1px solid var(--nb-ramka); }
+  .numer { flex-direction: row; align-items: baseline; gap: 12px; padding: 10px 0; }
+  .numer__cyfry { flex: none; min-width: 6.2em; font-size: 1.35rem; }
   .w-przygotowaniu { padding: 32px 20px; }
   .w-przygotowaniu .kafel__przycisk { align-self: center; }
-  .stopka__kolumny { grid-template-columns: 1fr; gap: 24px; }
+  .stopka__kolumny { grid-template-columns: 1fr; gap: 14px; }
   .stopka__konto { flex-direction: column; }
 }

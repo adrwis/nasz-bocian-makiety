@@ -8,13 +8,21 @@ Co zrobiłyśmy, co jest w toku i co dalej. Najnowsze na górze. Statusy: **zrob
 - Klikalne: kafelki i pozycje menu (strony „w przygotowaniu”), logo, „Wyszukaj” (rozwija pole), numery kryzysowe, cała stopka (linki do nasz-bocian.pl, zbiórek i mediów społecznościowych). Reszta (menu, wyszukiwarka, stopka) jest widoczna, ale wyłączona.
 - Strona główna makiety to strona z 3 kafelkami („Jak możemy Ci pomóc?”).
 
+## 2026-10-21, uwagi Ady do czwartej wersji
+
+| # | Uwaga Ady | Co robimy | Status |
+|---|---|---|---|
+| 20 | Przyciski na kafelkach są w złych kolorach. | Kolory marki: zieleń `#1BA574` (praktycznie `#1EAA78` ze strony) i pomarańcz z logo `#F36717`, biały napis 19 px pogrubiony. Przy tej wielkości napis spełnia normę kontrastu dla dużego tekstu. Wcześniejsze ciemniejsze odcienie (`#12805A`, `#C2490A`) zostają tylko do małych elementów. Zapisane w `branding/BRANDING.md`. | zrobione |
+| 21 | „Potrzebujesz pomocy od razu?” jest za okrągła, nie wygląda poważnie, za duża (zmniejszyć o połowę). | Płaski panel z małym zaokrągleniem (4 px), bez gradientu i ikony. Tekst po lewej, 3 numery w rzędzie po prawej, oddzielone liniami. Wysokość z ok. 480 px do ok. 140 px. Na telefonie numery jeden pod drugim, numer z opisem w jednej linii. | zrobione |
+| 22 | W stopce Informacje oraz Zasady i polityki: tekst bez zmian, estetyka jak na obecnej stronie. | Typografia i odstępy ze stopki nasz-bocian.pl: małe nagłówki wersalikami, zwarte listy, telefony i e-mail podkreślone na pomarańczowo, linki podkreślają się po najechaniu. Kolory z brandingu zamiast śliwkowego. Tekst 14 px (na produkcji 12,5 px, za mały do wygodnego czytania). | zrobione |
+
 ## 2026-10-20, uwagi Ady do trzeciej wersji
 
 | # | Uwaga Ady | Co robimy | Status |
 |---|---|---|---|
 | 14 | Wyśrodkować „Obserwuj nas” razem z serwisami społecznościowymi. | Napis i przyciski na środku stopki. | zrobione |
 | 15 | Usunąć pole wyszukiwania pod „Jak możemy Ci pomóc?”. „Wyszukaj” zostaje w prawym górnym rogu i ma się rozwijać. | Pole pod tytułem usunięte. Kliknięcie „Wyszukaj” rozwija pod nagłówkiem pasek z polem „Napisz, czego szukasz” i przykładami. Ikona zmienia się w krzyżyk, Esc zamyka. Na razie nie wyszukuje. | zrobione |
-| 16 | Ładniej zrobić „Potrzebujesz pomocy od razu?” (z użyciem skilla frontend-design). | Ciepłe tło z delikatnym przejściem pomarańczu i zieleni, ikona serca, nagłówek na środku. Numery jako 3 duże karty z przyciskiem „Zadzwoń”, 112 wyróżnione pomarańczem. Na telefonie karty jedna pod drugą. Dopisane „połączenia są bezpłatne”. | zrobione |
+| 16 | Ładniej zrobić „Potrzebujesz pomocy od razu?” (z użyciem skilla frontend-design). | Ciepłe tło z gradientem, ikona serca, duże karty z numerami. | zastąpione (uwaga 21) |
 | 17 | Wyśrodkować napis „Jak możemy Ci pomóc?”. | Tytuł i zdanie „Wybierz, czego teraz potrzebujesz.” na środku. | zrobione |
 | 18 | Kliknięcie w pozycję menu (między logo a „Wyszukaj”) pokazuje stronę „w przygotowaniu”, jak po kliknięciu kafelka. | Każda pozycja menu prowadzi do strony „Tę stronę właśnie przygotowujemy” z przyciskiem powrotu, tak jak kafelki. Pozycja menu bieżącej strony ma pomarańczowe podkreślenie. | zrobione |
 | 19 | W stopce Kontakt, Informacje, Zasady i polityki klikalne, prowadzą do stron z oryginalnej strony. | Linki prowadzą do stron na nasz-bocian.pl (w nowej karcie), telefony i e-mail klikalne. „Ustawienia cookies” prowadzi do zasad korzystania z serwisu, bo w makiecie nie ma banera cookies. | zrobione |

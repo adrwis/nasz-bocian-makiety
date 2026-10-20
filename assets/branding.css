@@ -14,10 +14,12 @@
   /* Kolory marki */
   --nb-pomarancz: #F36717;          /* logo, akcenty, podkreślenia, tło pasa „Wesprzyj” */
   --nb-pomarancz-hover: #D2540C;    /* najechanie na pomarańczowe elementy */
-  --nb-pomarancz-przycisk: #C2490A; /* przyciski z białym tekstem (kontrast 4,9:1) */
+  --nb-pomarancz-przycisk: #C2490A; /* pomarańczowy tekst na białym, małe przyciski z białym tekstem (kontrast 4,9:1) */
+  --nb-przycisk-pomaranczowy: #F36717; /* duże przyciski: biały napis min. 19 px pogrubiony (kontrast 3,1:1) */
   --nb-zielen: #1EAA78;             /* zieleń marki: ikony, ramki, duże elementy bez tekstu */
   --nb-zielen-hover: #138C61;
-  --nb-zielen-przycisk: #12805A;    /* przyciski i linki z białym tekstem (kontrast 4,9:1) */
+  --nb-zielen-przycisk: #12805A;    /* zielony tekst na białym, małe przyciski z białym tekstem (kontrast 4,9:1) */
+  --nb-przycisk-zielony: #1BA574;   /* duże przyciski: biały napis min. 19 px pogrubiony (kontrast 3,1:1) */
   --nb-zielen-ciemna: #0F6E56;      /* linki i akcenty na jasnym tle (kontrast 6,2:1) */
 
   /* Tekst i tła */
