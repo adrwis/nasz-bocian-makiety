@@ -7,14 +7,16 @@ Co zrobiłyśmy, co jest w toku i co dalej. Najnowsze na górze. Statusy: **zrob
 - Makieta pokazuje tylko nasze zmiany. Oryginalnej treści strony jeszcze w niej nie ma.
 - Klikalne: kafelki i pozycje menu (strony „w przygotowaniu”), logo, „Wyszukaj” (rozwija pole), numery kryzysowe, cała stopka (linki do nasz-bocian.pl, zbiórek i mediów społecznościowych). Reszta (menu, wyszukiwarka, stopka) jest widoczna, ale wyłączona.
 - Strona główna makiety to strona z 3 kafelkami („Jak możemy Ci pomóc?”).
+- Najechanie na klikalne słowa: tekst robi się pomarańczowy `#F36717`, bez podkreślenia. Tak na wszystkich stronach, także nowych (szczegóły w `branding/BRANDING.md`, sekcja „Interakcje”).
 
 ## 2026-10-21, najechanie myszką
 
 | # | Uwaga Ady | Co robimy | Status |
 |---|---|---|---|
+| 29 | Pomarańczowe podświetlenie się podoba: wprowadzić na każdej stronie makiety i stosować na kolejnych. | Na wszystkich stronach: menu (także bieżąca strona, zamiast paska), „Wyszukaj”, stopka, media społecznościowe, linki i spis treści w dokumentach, numery kryzysowe. Zasada zapisana w `branding/BRANDING.md` (sekcja „Interakcje”) i w zasadach makiety na górze tego pliku. | zrobione |
 | 28 | Czarny tekst jest za mocny, zamienić na szary jak w „Wybierz, czego teraz potrzebujesz”. | Podstawowy kolor tekstu w brandingu zmieniony z `#292728` na `#5A5A5A` (cała makieta: nagłówki, akapity, menu, stopka). Na pomarańczowym pasie „Wesprzyj” tekst zostaje ciemny, bo szary byłby tam nieczytelny. | zrobione |
 | 27 | Na stronie głównej nadal widać podkreślenie zamiast zmiany koloru. | Zmiana była już na serwerze, ale GitHub Pages pozwala przeglądarce trzymać stare style przez 10 minut. Do adresów stylów i skryptu doszedł numer wersji, więc każda zmiana jest widoczna od razu. | zrobione |
-| 26 | Zamiast pomarańczowego podkreślenia po najechaniu na klikalne słowa: zmiana koloru tekstu na pomarańczowy. Na razie w menu i stopce strony głównej; jeśli się spodoba, na pozostałych stronach. | Tylko strona główna (klasa `strona-glowna`): pozycje menu, „Wyszukaj”, linki w kolumnach stopki i przyciski mediów społecznościowych po najechaniu robią się pomarańczowe (`#F36717`), bez podkreślenia i bez paska pod menu. Telefony i e-mail w Kontakcie zachowują stałe podkreślenie (to oznaczenie linku, nie efekt najechania). Pozycja menu bieżącej strony na innych stronach nadal ma pasek. | do oceny Ady |
+| 26 | Zamiast pomarańczowego podkreślenia po najechaniu na klikalne słowa: zmiana koloru tekstu na pomarańczowy. Na razie w menu i stopce strony głównej; jeśli się spodoba, na pozostałych stronach. | Tylko strona główna (klasa `strona-glowna`): pozycje menu, „Wyszukaj”, linki w kolumnach stopki i przyciski mediów społecznościowych po najechaniu robią się pomarańczowe (`#F36717`), bez podkreślenia i bez paska pod menu. Telefony i e-mail w Kontakcie zachowują stałe podkreślenie (to oznaczenie linku, nie efekt najechania). Pozycja menu bieżącej strony na innych stronach nadal ma pasek. | zaakceptowane, rozszerzone (uwaga 29) |
 
 ## 2026-10-21, poprawki tekstów
 
