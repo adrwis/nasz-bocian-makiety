@@ -8,6 +8,7 @@ Tytuł strony bierze się z pierwszej linii pliku: <!-- tytul: ... -->
 
 Użycie: python3 narzedzia/zbuduj.py
 """
+import hashlib
 import re
 import shutil
 from pathlib import Path
@@ -38,9 +39,9 @@ STRONA = """<!doctype html>
 <meta name="robots" content="noindex, nofollow">
 <title>{tytul} | Nasz Bocian (makieta)</title>
 <link rel="icon" href="https://nasz-bocian.pl/sites/default/files/favi.png">
-<link rel="stylesheet" href="{root}assets/branding.css">
-<link rel="stylesheet" href="{root}assets/makieta.css">
-<script src="{root}assets/makieta.js" defer></script>
+<link rel="stylesheet" href="{root}assets/branding.css?v={wersja}">
+<link rel="stylesheet" href="{root}assets/makieta.css?v={wersja}">
+<script src="{root}assets/makieta.js?v={wersja}" defer></script>
 </head>
 <body class="{klasa}">
 {naglowek}
@@ -58,6 +59,11 @@ def czytaj(sciezka):
 def zbuduj():
     shutil.copyfile(NASZ_BOCIAN / "branding" / "tokeny.css", ROOT / "assets" / "branding.css")
     shutil.copyfile(NASZ_BOCIAN / "logo" / "bocian_stopka.png", ROOT / "assets" / "logo.png")
+
+    # Numer wersji w adresach plików: GitHub Pages pozwala przeglądarce trzymać je 10 minut,
+    # więc bez niego zmiany w stylach nie byłyby od razu widoczne.
+    wersja = hashlib.sha1(b"".join((ROOT / "assets" / f).read_bytes()
+                                   for f in ("branding.css", "makieta.css", "makieta.js"))).hexdigest()[:8]
 
     naglowek = czytaj("szablon/naglowek.html")
     stopka = czytaj("szablon/stopka.html").replace("{{social}}", czytaj("szablon/_social.html"))
@@ -81,7 +87,7 @@ def zbuduj():
         # Bieżąca pozycja menu dostaje aria-current, żeby była podkreślona.
         nag = naglowek.replace(f'href="{{{{root}}}}{slug}/"', f'href="{{{{root}}}}{slug}/" aria-current="page"')
         html = STRONA.format(tytul=tytul, root=root, naglowek=nag, tresc=tresc, stopka=stopka,
-                             klasa="strona-glowna" if slug == "index" else "")
+                             klasa="strona-glowna" if slug == "index" else "", wersja=wersja)
         cel.write_text(html.replace("{{root}}", root), encoding="utf-8")
         print(f"Zapisano {cel.relative_to(ROOT)}")
 

@@ -23,7 +23,8 @@
   --nb-zielen-ciemna: #0F6E56;      /* linki i akcenty na jasnym tle (kontrast 6,2:1) */
 
   /* Tekst i tła */
-  --nb-tekst: #292728;              /* podstawowy tekst strony */
+  --nb-tekst: #5A5A5A;              /* podstawowy tekst (Ada 2026-10-21: czarny #292728 za mocny), kontrast 6,9:1 */
+  --nb-tekst-ciemny: #292728;       /* tylko na pomarańczowym tle, gdzie szary byłby nieczytelny */
   --nb-tekst-drugi: #5A5A5A;        /* opisy, podpisy (kontrast 6,9:1 na białym) */
   --nb-tlo: #FFFFFF;
   --nb-tlo-cieple: #F3F0EB;         /* bloki wyróżnione, stopka */
