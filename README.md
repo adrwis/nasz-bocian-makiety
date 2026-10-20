@@ -2,11 +2,10 @@
 
 Robocze propozycje zmian na stronie Stowarzyszenia Nasz Bocian, do akceptacji przez Stowarzyszenie. Podgląd: https://adrwis.github.io/nasz-bocian-makiety/
 
-Każda makieta to folder nazwany jak adres strony (np. `jak-mozemy-ci-pomoc/`):
+Makieta pokazuje tylko proponowane zmiany. Klikalne są kafelki, logo i numery kryzysowe, reszta jest wyłączona. Historia uwag i stan prac: [ZMIANY.md](ZMIANY.md).
 
-- `tresc.html`: nowa zawartość `<main>`, w strukturze HTML Drupala z produkcji,
-- `index.html`: gotowa makieta, zbudowana skryptem (nie edytować ręcznie),
-- `poprawki.css`: zmiany CSS do przeniesienia do motywu,
-- `dla-redaktora.md`: co wpisać w panelu Drupala.
-
-Budowanie: `python3 narzedzia/zbuduj.py <folder>`. Skrypt pobiera stronę z produkcji, usuwa analitykę i baner cookies, podmienia `<main>` na `tresc.html` i dokleja pasek „Makieta robocza”. Style, czcionki i obrazy ładują się z nasz-bocian.pl.
+- `strony/`: treść każdej strony (`index.html` to strona główna makiety),
+- `szablon/`: wspólny nagłówek i stopka,
+- `assets/`: style i skrypt makiety,
+- `dokumenty/`: instrukcje dla redaktora i CSS dla programisty,
+- `narzedzia/zbuduj.py`: składa strony (`python3 narzedzia/zbuduj.py`). Gotowych plików `index.html` nie edytujemy ręcznie.

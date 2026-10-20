@@ -1,7 +1,7 @@
 # „Jak możemy Ci pomóc?”: co zmienić w panelu
 
 Strona: `/jak-mozemy-ci-pomoc` (w Drupalu `node/11935`).
-Podgląd docelowego wyglądu: [makieta](https://adrwis.github.io/nasz-bocian-makiety/jak-mozemy-ci-pomoc/).
+Podgląd docelowego wyglądu: [makieta](https://adrwis.github.io/nasz-bocian-makiety/).
 
 Instrukcja jest wstępna. Dokładne nazwy pól uzupełnimy po obejrzeniu formularza edycji na wersji testowej.
 
