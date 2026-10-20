@@ -16,6 +16,20 @@ ROOT = Path(__file__).resolve().parent.parent
 # Branding i logo trzymamy w repo Nasz Bocian (psycho/nasz-bocian), tu tylko kopie.
 NASZ_BOCIAN = ROOT.parent.parent
 
+# Strony, których jeszcze nie projektowałyśmy: pokazują „Tę stronę właśnie przygotowujemy”.
+W_PRZYGOTOWANIU = {
+    "nieplodnosc": "Niepłodność",
+    "adopcja": "Adopcja",
+    "rodzina-zastepcza": "Rodzina zastępcza",
+    "zaakceptowana-bezdzietnosc": "Zaakceptowana bezdzietność",
+    "zachowaj-plodnosc": "Zachowaj płodność",
+    "szkolenia": "Szkolenia",
+    "o-nas": "O nas",
+    "szukam-informacji": "Szukam informacji",
+    "linia-pomocy": "Linia pomocy „Pacjent dla pacjenta”",
+    "kontakt": "Kontakt",
+}
+
 STRONA = """<!doctype html>
 <html lang="pl">
 <head>
@@ -48,21 +62,27 @@ def zbuduj():
     naglowek = czytaj("szablon/naglowek.html")
     stopka = czytaj("szablon/stopka.html").replace("{{social}}", czytaj("szablon/_social.html"))
 
+    strony = {}
     for plik in sorted((ROOT / "strony").glob("*.html")):
         tresc = plik.read_text(encoding="utf-8")
         tytul = re.match(r"<!-- tytul: (.*?) -->", tresc).group(1)
-        tresc = tresc.split("\n", 1)[1]
+        strony[plik.stem] = (tytul, tresc.split("\n", 1)[1])
+    szablon = czytaj("szablon/w-przygotowaniu.html")
+    for slug, tytul in W_PRZYGOTOWANIU.items():
+        strony.setdefault(slug, (tytul, szablon.replace("{{tytul}}", tytul)))
 
-        if plik.stem == "index":
+    for slug, (tytul, tresc) in strony.items():
+        if slug == "index":
             cel, root = ROOT / "index.html", "./"
         else:
-            cel, root = ROOT / plik.stem / "index.html", "../"
+            cel, root = ROOT / slug / "index.html", "../"
             cel.parent.mkdir(exist_ok=True)
 
-        html = STRONA.format(tytul=tytul, root=root, naglowek=naglowek, tresc=tresc, stopka=stopka)
+        # Bieżąca pozycja menu dostaje aria-current, żeby była podkreślona.
+        nag = naglowek.replace(f'href="{{{{root}}}}{slug}/"', f'href="{{{{root}}}}{slug}/" aria-current="page"')
+        html = STRONA.format(tytul=tytul, root=root, naglowek=nag, tresc=tresc, stopka=stopka)
         cel.write_text(html.replace("{{root}}", root), encoding="utf-8")
         print(f"Zapisano {cel.relative_to(ROOT)}")
-
 
 if __name__ == "__main__":
     zbuduj()

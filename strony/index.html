@@ -3,15 +3,7 @@
   <div class="wnetrze">
     <h1>Jak możemy Ci pomóc?</h1>
 
-    <form class="szukaj" id="szukaj" role="search" action="#">
-      <label class="szukaj__etykieta" for="szukaj-pole">Szukaj na stronie</label>
-      <svg class="szukaj__ikona" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/></svg>
-      <input id="szukaj-pole" type="search" placeholder="Napisz, czego szukasz" autocomplete="off">
-      <button type="submit">Szukaj</button>
-    </form>
-    <p class="szukaj__podpowiedz">Na przykład: in vitro, adopcja, AMH, grupa wsparcia</p>
-
-    <p class="wstep">Albo wybierz, czego teraz potrzebujesz:</p>
+    <p class="wstep">Wybierz, czego teraz potrzebujesz.</p>
 
     <div class="kafle">
       <a class="kafel" href="{{root}}szukam-informacji/">
@@ -49,12 +41,35 @@
     </div>
 
     <section class="pomoc-teraz" aria-labelledby="pomoc-teraz-tytul">
-      <h2 id="pomoc-teraz-tytul">Potrzebujesz pomocy od razu?</h2>
-      <p>Jeśli jest Ci bardzo ciężko albo myślisz o zrobieniu sobie krzywdy, nie czekaj na godziny naszej Linii. Zadzwoń:</p>
-      <ul>
-        <li><a href="tel:116123">116 123</a> Kryzysowy Telefon Zaufania</li>
-        <li><a href="tel:800702222">800 70 2222</a> Centrum Wsparcia dla osób w kryzysie psychicznym</li>
-        <li><a href="tel:112">112</a> w sytuacji zagrożenia życia</li>
+      <div class="pomoc-teraz__naglowek">
+        <span class="pomoc-teraz__znak" aria-hidden="true">
+          <svg viewBox="0 0 48 48" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M24 40s-14-8.6-14-19a8 8 0 0 1 14-5.3A8 8 0 0 1 38 21c0 10.4-14 19-14 19z"/><path d="M17 23h4l2-4 3 8 2-4h3"/></svg>
+        </span>
+        <h2 id="pomoc-teraz-tytul">Potrzebujesz pomocy od&nbsp;razu?</h2>
+        <p>Jeśli jest Ci bardzo ciężko albo myślisz o zrobieniu sobie krzywdy, nie czekaj na godziny naszej Linii. Zadzwoń, połączenia są bezpłatne.</p>
+      </div>
+      <ul class="pomoc-teraz__numery">
+        <li>
+          <a class="numer" href="tel:116123">
+            <span class="numer__cyfry">116 123</span>
+            <span class="numer__opis">Kryzysowy Telefon Zaufania</span>
+            <span class="numer__akcja"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>Zadzwoń</span>
+          </a>
+        </li>
+        <li>
+          <a class="numer" href="tel:800702222">
+            <span class="numer__cyfry">800 70 2222</span>
+            <span class="numer__opis">Centrum Wsparcia dla osób w kryzysie psychicznym</span>
+            <span class="numer__akcja"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>Zadzwoń</span>
+          </a>
+        </li>
+        <li>
+          <a class="numer numer--alarm" href="tel:112">
+            <span class="numer__cyfry">112</span>
+            <span class="numer__opis">Numer alarmowy, gdy zagrożone jest życie</span>
+            <span class="numer__akcja"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>Zadzwoń</span>
+          </a>
+        </li>
       </ul>
     </section>
   </div>

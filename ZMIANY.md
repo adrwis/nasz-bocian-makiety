@@ -5,8 +5,19 @@ Co zrobiłyśmy, co jest w toku i co dalej. Najnowsze na górze. Statusy: **zrob
 ## Zasady makiety (od 2026-10-20)
 
 - Makieta pokazuje tylko nasze zmiany. Oryginalnej treści strony jeszcze w niej nie ma.
-- Klikalne są tylko 3 kafelki, logo, „Wyszukaj”, numery kryzysowe, przyciski zbiórek i media społecznościowe. Reszta (menu, wyszukiwarka, stopka) jest widoczna, ale wyłączona.
+- Klikalne: kafelki i pozycje menu (strony „w przygotowaniu”), logo, „Wyszukaj” (rozwija pole), numery kryzysowe, cała stopka (linki do nasz-bocian.pl, zbiórek i mediów społecznościowych). Reszta (menu, wyszukiwarka, stopka) jest widoczna, ale wyłączona.
 - Strona główna makiety to strona z 3 kafelkami („Jak możemy Ci pomóc?”).
+
+## 2026-10-20, uwagi Ady do trzeciej wersji
+
+| # | Uwaga Ady | Co robimy | Status |
+|---|---|---|---|
+| 14 | Wyśrodkować „Obserwuj nas” razem z serwisami społecznościowymi. | Napis i przyciski na środku stopki. | zrobione |
+| 15 | Usunąć pole wyszukiwania pod „Jak możemy Ci pomóc?”. „Wyszukaj” zostaje w prawym górnym rogu i ma się rozwijać. | Pole pod tytułem usunięte. Kliknięcie „Wyszukaj” rozwija pod nagłówkiem pasek z polem „Napisz, czego szukasz” i przykładami. Ikona zmienia się w krzyżyk, Esc zamyka. Na razie nie wyszukuje. | zrobione |
+| 16 | Ładniej zrobić „Potrzebujesz pomocy od razu?” (z użyciem skilla frontend-design). | Ciepłe tło z delikatnym przejściem pomarańczu i zieleni, ikona serca, nagłówek na środku. Numery jako 3 duże karty z przyciskiem „Zadzwoń”, 112 wyróżnione pomarańczem. Na telefonie karty jedna pod drugą. Dopisane „połączenia są bezpłatne”. | zrobione |
+| 17 | Wyśrodkować napis „Jak możemy Ci pomóc?”. | Tytuł i zdanie „Wybierz, czego teraz potrzebujesz.” na środku. | zrobione |
+| 18 | Kliknięcie w pozycję menu (między logo a „Wyszukaj”) pokazuje stronę „w przygotowaniu”, jak po kliknięciu kafelka. | Każda pozycja menu prowadzi do strony „Tę stronę właśnie przygotowujemy” z przyciskiem powrotu, tak jak kafelki. Pozycja menu bieżącej strony ma pomarańczowe podkreślenie. | zrobione |
+| 19 | W stopce Kontakt, Informacje, Zasady i polityki klikalne, prowadzą do stron z oryginalnej strony. | Linki prowadzą do stron na nasz-bocian.pl (w nowej karcie), telefony i e-mail klikalne. „Ustawienia cookies” prowadzi do zasad korzystania z serwisu, bo w makiecie nie ma banera cookies. | zrobione |
 
 ## 2026-10-20, uwagi Ady do drugiej wersji
 
@@ -59,4 +70,5 @@ Co zrobiłyśmy, co jest w toku i co dalej. Najnowsze na górze. Statusy: **zrob
 | Czy na Linii rozmawiają osoby z własnym doświadczeniem leczenia | zarząd |
 | Czy Stowarzyszenie podpowiada, gdzie szukać specjalisty | zarząd |
 | Data kolejnej edycji grup wsparcia | zarząd |
+| Potwierdzić, że połączenia z 116 123 i 800 70 2222 są bezpłatne (tekst w bloku „Potrzebujesz pomocy od razu?”), przed wdrożeniem na produkcję | Ada |
 | Zdjęcia w kafelkach są z Freepika (podpis na zdjęciu: „zdjęcie utworzone przez … freepik.com”). Darmowa licencja Freepika wymaga podania autora. Skoro chowamy podpis na zdjęciu, na produkcji trzeba dać podpis gdzie indziej (np. „Zdjęcia: Freepik” w stopce), wykupić licencję albo wymienić zdjęcia. | Ada, zarząd |
