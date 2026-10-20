@@ -496,6 +496,17 @@ h1, h2 { line-height: 1.15; }
 }
 .stopka__dol p { margin: 0; }
 
+/* Strona główna (próba, uwaga 26): po najechaniu na klikalne słowa zmienia się kolor tekstu
+ * na pomarańczowy zamiast podkreślenia. Jeśli się sprawdzi, przeniesiemy to na wszystkie strony. */
+.strona-glowna .menu li:hover { border-bottom-color: transparent; }
+.strona-glowna .menu a { transition: color .15s; }
+.strona-glowna .menu a:hover { color: var(--nb-pomarancz); }
+.strona-glowna .naglowek__szukaj:hover { color: var(--nb-pomarancz); }
+.strona-glowna .stopka__kolumny a { transition: color .15s; }
+.strona-glowna .stopka__kolumny li a:hover { text-decoration: none; color: var(--nb-pomarancz); }
+.strona-glowna .stopka__kolumny p a:hover { color: var(--nb-pomarancz); }
+.strona-glowna .stopka__social a:hover { border-color: var(--nb-ramka); color: var(--nb-pomarancz); }
+
 /* Ruch: spokojne pojawienie się treści po wejściu na stronę */
 @keyframes rozwin { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: none; } }
 @keyframes pojaw { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
@@ -543,6 +554,7 @@ h1, h2 { line-height: 1.15; }
   .menu li { border-bottom: 1px solid var(--nb-ramka); border-left: 6px solid transparent; }
   .menu li:hover, .menu li:has([aria-current]) { border-bottom-color: var(--nb-ramka); border-left-color: var(--nb-pomarancz); }
   .menu a { padding: 14px 12px; }
+  .strona-glowna .menu li:hover { border-left-color: transparent; }
   .szukaj-panel { padding: 16px; }
   .tresc { padding: 36px 0 56px; }
   .tresc h1 { font-size: 1.9rem; }

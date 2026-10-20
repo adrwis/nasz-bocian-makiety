@@ -42,7 +42,7 @@ STRONA = """<!doctype html>
 <link rel="stylesheet" href="{root}assets/makieta.css">
 <script src="{root}assets/makieta.js" defer></script>
 </head>
-<body>
+<body class="{klasa}">
 {naglowek}
 {tresc}
 {stopka}
@@ -80,7 +80,8 @@ def zbuduj():
 
         # Bieżąca pozycja menu dostaje aria-current, żeby była podkreślona.
         nag = naglowek.replace(f'href="{{{{root}}}}{slug}/"', f'href="{{{{root}}}}{slug}/" aria-current="page"')
-        html = STRONA.format(tytul=tytul, root=root, naglowek=nag, tresc=tresc, stopka=stopka)
+        html = STRONA.format(tytul=tytul, root=root, naglowek=nag, tresc=tresc, stopka=stopka,
+                             klasa="strona-glowna" if slug == "index" else "")
         cel.write_text(html.replace("{{root}}", root), encoding="utf-8")
         print(f"Zapisano {cel.relative_to(ROOT)}")
 

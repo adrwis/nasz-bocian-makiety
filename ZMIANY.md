@@ -8,6 +8,12 @@ Co zrobiłyśmy, co jest w toku i co dalej. Najnowsze na górze. Statusy: **zrob
 - Klikalne: kafelki i pozycje menu (strony „w przygotowaniu”), logo, „Wyszukaj” (rozwija pole), numery kryzysowe, cała stopka (linki do nasz-bocian.pl, zbiórek i mediów społecznościowych). Reszta (menu, wyszukiwarka, stopka) jest widoczna, ale wyłączona.
 - Strona główna makiety to strona z 3 kafelkami („Jak możemy Ci pomóc?”).
 
+## 2026-10-21, najechanie myszką
+
+| # | Uwaga Ady | Co robimy | Status |
+|---|---|---|---|
+| 26 | Zamiast pomarańczowego podkreślenia po najechaniu na klikalne słowa: zmiana koloru tekstu na pomarańczowy. Na razie w menu i stopce strony głównej; jeśli się spodoba, na pozostałych stronach. | Tylko strona główna (klasa `strona-glowna`): pozycje menu, „Wyszukaj”, linki w kolumnach stopki i przyciski mediów społecznościowych po najechaniu robią się pomarańczowe (`#F36717`), bez podkreślenia i bez paska pod menu. Telefony i e-mail w Kontakcie zachowują stałe podkreślenie (to oznaczenie linku, nie efekt najechania). Pozycja menu bieżącej strony na innych stronach nadal ma pasek. | do oceny Ady |
+
 ## 2026-10-21, poprawki tekstów
 
 | # | Uwaga Ady | Co robimy | Status |
