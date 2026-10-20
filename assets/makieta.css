@@ -1,6 +1,8 @@
 /* Makieta Nasz Bocian. Kolory i czcionka: assets/branding.css (kopia branding/tokeny.css). */
 
 * { box-sizing: border-box; }
+/* Słowa nigdy się nie dzielą (Ada 2026-10-21). */
+html { hyphens: manual; -webkit-hyphens: manual; }
 html { font-size: 16px; }
 body {
   margin: 0;
@@ -304,8 +306,8 @@ h1, h2 { line-height: 1.15; }
 /* Adresy stron i e-maile zawsze w jednej linii, bez dzielenia (Ada 2026-10-21). */
 .adres { white-space: nowrap; hyphens: none; -webkit-hyphens: none; }
 
-/* Wyjustowany tekst (Ada 2026-10-21). Dzielenie wyrazów zmniejsza dziury między słowami. */
-.dokument__tresc p, .dokument__tresc li { text-align: justify; hyphens: auto; -webkit-hyphens: auto; }
+/* Wyjustowany tekst, bez dzielenia wyrazów: całe słowo przechodzi do następnej linii (Ada 2026-10-21). */
+.dokument__tresc p, .dokument__tresc li { text-align: justify; }
 .dokument__tresc p { margin: 0 0 1em; }
 .dokument__tresc h2 {
   margin: 2.2em 0 .7em;
