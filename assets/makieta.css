@@ -243,6 +243,95 @@ h1, h2 { line-height: 1.15; }
 .w-przygotowaniu p { margin: 0 0 8px; color: var(--nb-tekst-drugi); }
 .w-przygotowaniu .kafel__przycisk { margin: 20px 0 0; }
 
+/* Strony z dokumentem (np. ustawienia cookies): wąska kolumna tekstu */
+.dokument { max-width: 760px; margin: 8px auto 0; }
+.dokument__wstep { text-align: center; margin-bottom: 28px; }
+.dokument__wstep h2 { margin: 0 0 8px; font-size: 1.35rem; font-weight: 700; }
+.dokument__wstep p { margin: 0; color: var(--nb-tekst-drugi); }
+.dokument a { color: var(--nb-zielen-ciemna); font-weight: 600; text-decoration-thickness: 1px; text-underline-offset: 3px; }
+.dokument a:hover { text-decoration-color: var(--nb-pomarancz); text-decoration-thickness: 2px; }
+.dokument__przypis { margin: 20px 0 0; font-size: .95rem; color: var(--nb-tekst-drugi); text-align: center; }
+
+/* Ustawienia cookies */
+.cookies {
+  background: var(--nb-tlo);
+  border: 1px solid var(--nb-ramka);
+  border-top: 4px solid var(--nb-zielen-ciemna);
+  border-radius: 4px;
+}
+.cookies__lista { list-style: none; margin: 0; padding: 0; }
+.cookies__kategoria {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 20px 28px;
+}
+.cookies__kategoria + .cookies__kategoria { border-top: 1px solid var(--nb-ramka); }
+.cookies__opis h3 { margin: 0 0 4px; font-size: 1.1rem; font-weight: 700; }
+.cookies__opis p { margin: 0; font-size: .97rem; line-height: 1.45; color: var(--nb-tekst-drugi); }
+.cookies__zawsze {
+  flex: none;
+  font-size: .8rem;
+  font-weight: 700;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--nb-zielen-ciemna);
+}
+
+/* Przełącznik: duży cel dotyku, stan widoczny także bez koloru (pozycja kropki) */
+.przelacznik { position: relative; flex: none; display: inline-flex; cursor: pointer; }
+.przelacznik input { position: absolute; inset: 0; opacity: 0; margin: 0; cursor: pointer; }
+.przelacznik__tor {
+  position: relative;
+  width: 52px;
+  height: 30px;
+  border-radius: 15px;
+  background: #c9c3ba;
+  transition: background .2s;
+}
+.przelacznik__tor::after {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, .25);
+  transition: transform .2s;
+}
+.przelacznik input:checked + .przelacznik__tor { background: var(--nb-zielen-przycisk); }
+.przelacznik input:checked + .przelacznik__tor::after { transform: translateX(22px); }
+.przelacznik input:focus-visible + .przelacznik__tor { outline: 3px solid var(--nb-zielen-przycisk); outline-offset: 3px; }
+
+/* Trzy decyzje o tej samej wadze */
+.cookies__przyciski {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  padding: 20px 28px 24px;
+  background: var(--nb-tlo-cieple);
+  border-top: 1px solid var(--nb-ramka);
+}
+.cookies__przyciski button {
+  min-height: 48px;
+  padding: 0 16px;
+  border: 2px solid var(--nb-zielen-przycisk);
+  border-radius: 4px;
+  background: var(--nb-tlo);
+  color: var(--nb-zielen-przycisk);
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background .15s, color .15s;
+}
+.cookies__przyciski button:hover { background: var(--nb-zielen-przycisk); color: #fff; }
+.cookies__przyciski button:focus-visible { outline: 3px solid var(--nb-zielen-przycisk); outline-offset: 3px; }
+.cookies__komunikat { margin: 0; padding: 0 28px; font-weight: 600; color: var(--nb-zielen-ciemna); background: var(--nb-tlo-cieple); }
+.cookies__komunikat:not(:empty) { padding-bottom: 20px; }
+
 /* Stopka */
 .stopka { background: var(--nb-tlo-cieple); }
 .stopka a { color: inherit; }
@@ -357,12 +446,13 @@ h1, h2 { line-height: 1.15; }
 /* Ruch: spokojne pojawienie się treści po wejściu na stronę */
 @keyframes rozwin { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: none; } }
 @keyframes pojaw { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
-.tresc h1, .wstep, .kafel, .pomoc-teraz, .w-przygotowaniu { animation: pojaw .5s ease-out both; }
+.tresc h1, .wstep, .kafel, .pomoc-teraz, .w-przygotowaniu, .dokument { animation: pojaw .5s ease-out both; }
 .wstep { animation-delay: .05s; }
 .kafel:nth-child(1) { animation-delay: .1s; }
 .kafel:nth-child(2) { animation-delay: .18s; }
 .kafel:nth-child(3) { animation-delay: .26s; }
 .pomoc-teraz, .w-przygotowaniu { animation-delay: .34s; }
+.dokument { animation-delay: .08s; }
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
 }
@@ -425,5 +515,9 @@ h1, h2 { line-height: 1.15; }
   .w-przygotowaniu { padding: 32px 20px; }
   .w-przygotowaniu .kafel__przycisk { align-self: center; }
   .stopka__kolumny { grid-template-columns: 1fr; gap: 14px; }
+  .cookies__kategoria { padding: 16px; gap: 16px; }
+  .cookies__kategoria:has(.cookies__zawsze) { flex-direction: column; align-items: flex-start; gap: 8px; }
+  .cookies__przyciski { grid-template-columns: 1fr; padding: 16px; }
+  .cookies__komunikat { padding: 0 16px; }
   .stopka__konto { flex-direction: column; }
 }

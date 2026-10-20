@@ -1,0 +1,62 @@
+<!-- tytul: Ustawienia cookies -->
+<main class="tresc" id="tresc">
+  <div class="wnetrze">
+    <h1>Ustawienia cookies</h1>
+
+    <div class="dokument">
+      <section class="dokument__wstep" aria-labelledby="cookies-tytul">
+        <h2 id="cookies-tytul">Dbamy o Twoją prywatność</h2>
+        <p>Używamy plików cookie do prawidłowego działania witryny, analizy ruchu, działań marketingowych oraz obsługi newslettera i darowizn. <a href="https://nasz-bocian.pl/zasady-korzystania-z-serwisu" target="_blank" rel="noopener">Polityka prywatności</a></p>
+      </section>
+
+      <form class="cookies" id="cookies" aria-label="Wybór plików cookie">
+        <ul class="cookies__lista">
+          <li class="cookies__kategoria">
+            <div class="cookies__opis">
+              <h3 id="kat-niezbedne">Niezbędne</h3>
+              <p>Pliki cookie wymagane do prawidłowego działania strony. Obejmują obsługę logowania, zapisywanie wyboru cookies oraz zabezpieczenia Cloudflare.</p>
+            </div>
+            <span class="cookies__zawsze">Zawsze włączone</span>
+          </li>
+          <li class="cookies__kategoria">
+            <div class="cookies__opis">
+              <h3 id="kat-analityka">Analityka</h3>
+              <p>Pliki cookie pomagające zrozumieć, jak korzystasz ze strony. Używamy ich w Google Analytics.</p>
+            </div>
+            <label class="przelacznik"><input type="checkbox" name="analityka" aria-labelledby="kat-analityka"><span class="przelacznik__tor" aria-hidden="true"></span></label>
+          </li>
+          <li class="cookies__kategoria">
+            <div class="cookies__opis">
+              <h3 id="kat-marketing">Marketing</h3>
+              <p>Pliki cookie używane do prowadzenia akcji informacyjnych i reklamowych. Obejmują Meta Pixel.</p>
+            </div>
+            <label class="przelacznik"><input type="checkbox" name="marketing" aria-labelledby="kat-marketing"><span class="przelacznik__tor" aria-hidden="true"></span></label>
+          </li>
+          <li class="cookies__kategoria">
+            <div class="cookies__opis">
+              <h3 id="kat-newsletter">Newsletter</h3>
+              <p>Pliki cookie obsługujące zapisy do newslettera (MailerLite).</p>
+            </div>
+            <label class="przelacznik"><input type="checkbox" name="newsletter" aria-labelledby="kat-newsletter"><span class="przelacznik__tor" aria-hidden="true"></span></label>
+          </li>
+          <li class="cookies__kategoria">
+            <div class="cookies__opis">
+              <h3 id="kat-darowizny">Darowizny</h3>
+              <p>Pliki cookie firmy Fanimani obsługującej zbieranie darowizn na rzecz Stowarzyszenia.</p>
+            </div>
+            <label class="przelacznik"><input type="checkbox" name="darowizny" aria-labelledby="kat-darowizny"><span class="przelacznik__tor" aria-hidden="true"></span></label>
+          </li>
+        </ul>
+
+        <div class="cookies__przyciski">
+          <button type="button" data-akcja="odrzuc">Odrzuć</button>
+          <button type="submit" data-akcja="zapisz">Zapisz wybór</button>
+          <button type="button" data-akcja="wszystkie">Zezwól na wszystkie</button>
+        </div>
+        <p class="cookies__komunikat" role="status" aria-live="polite"></p>
+      </form>
+
+      <p class="dokument__przypis">Możesz w każdej chwili zmienić swoje preferencje dotyczące plików cookies lub całkowicie wycofać zgodę. Twoje ustawienia zostaną zapisane na 365 dni.</p>
+    </div>
+  </div>
+</main>

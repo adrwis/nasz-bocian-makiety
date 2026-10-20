@@ -8,6 +8,13 @@ Co zrobiłyśmy, co jest w toku i co dalej. Najnowsze na górze. Statusy: **zrob
 - Klikalne: kafelki i pozycje menu (strony „w przygotowaniu”), logo, „Wyszukaj” (rozwija pole), numery kryzysowe, cała stopka (linki do nasz-bocian.pl, zbiórek i mediów społecznościowych). Reszta (menu, wyszukiwarka, stopka) jest widoczna, ale wyłączona.
 - Strona główna makiety to strona z 3 kafelkami („Jak możemy Ci pomóc?”).
 
+## 2026-10-21, strony ze stopki
+
+| # | Uwaga Ady | Co robimy | Status |
+|---|---|---|---|
+| 23 | Kliknięcie np. „Ustawienia cookies” ma otwierać stronę w nowej makiecie (wygląd nowej strony głównej), a w środku tekst z oryginalnych cookies. Estetycznie, z frontend-design. | Nowa strona `/ustawienia-cookies/`. Tekst 1:1 z banera cookies na nasz-bocian.pl (wstęp, 5 kategorii z opisami, przyciski, zdanie o 365 dniach). Kategorie w płaskim panelu z przełącznikami, „Niezbędne” oznaczone „Zawsze włączone”. Trzy przyciski decyzji o równej wadze (na obecnej stronie „Odrzuć” to szary tekst, co lipcowy audyt wskazał jako ryzyko prawne). W makiecie wybór nie jest zapisywany, strona tylko to potwierdza. „Polityka prywatności” prowadzi na nasz-bocian.pl. | zrobione |
+| 24 | Pozostałe strony ze stopki w tym samym stylu (Ogłoszenia, Reklamy, Nota prawna, Zasady korzystania, Regulamin płatności, Współpraca z biznesem, Współpraca z partiami). | Ten sam szablon dokumentu z oryginalnym tekstem. | do decyzji Ady |
+
 ## 2026-10-21, uwagi Ady do czwartej wersji
 
 | # | Uwaga Ady | Co robimy | Status |
