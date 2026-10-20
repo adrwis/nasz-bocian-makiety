@@ -1,0 +1,37 @@
+/*
+ * Branding Nasz Bocian: jedno źródło prawdy dla kolorów i czcionek.
+ * Opis i zasady użycia: BRANDING.md w tym samym folderze.
+ * Makieta (strona/makiety) kopiuje ten plik przy każdym budowaniu, więc zmiany robimy tylko tutaj.
+ */
+
+@font-face { font-family: "Hind Vadodara"; src: url(https://nasz-bocian.pl/themes/custom/naszbocian/assets/fonts/HindVadodara-Light.ttf); font-weight: 300; font-display: swap; }
+@font-face { font-family: "Hind Vadodara"; src: url(https://nasz-bocian.pl/themes/custom/naszbocian/assets/fonts/HindVadodara-Regular.ttf); font-weight: 400; font-display: swap; }
+@font-face { font-family: "Hind Vadodara"; src: url(https://nasz-bocian.pl/themes/custom/naszbocian/assets/fonts/HindVadodara-Medium.ttf); font-weight: 500; font-display: swap; }
+@font-face { font-family: "Hind Vadodara"; src: url(https://nasz-bocian.pl/themes/custom/naszbocian/assets/fonts/HindVadodara-SemiBold.ttf); font-weight: 600; font-display: swap; }
+@font-face { font-family: "Hind Vadodara"; src: url(https://nasz-bocian.pl/themes/custom/naszbocian/assets/fonts/HindVadodara-Bold.ttf); font-weight: 700; font-display: swap; }
+
+:root {
+  /* Kolory marki */
+  --nb-pomarancz: #F36717;          /* logo, akcenty, podkreślenia, tło pasa „Wesprzyj” */
+  --nb-pomarancz-hover: #D2540C;    /* najechanie na pomarańczowe elementy */
+  --nb-pomarancz-przycisk: #C2490A; /* przyciski z białym tekstem (kontrast 4,9:1) */
+  --nb-zielen: #1EAA78;             /* zieleń marki: ikony, ramki, duże elementy bez tekstu */
+  --nb-zielen-hover: #138C61;
+  --nb-zielen-przycisk: #12805A;    /* przyciski i linki z białym tekstem (kontrast 4,9:1) */
+  --nb-zielen-ciemna: #0F6E56;      /* linki i akcenty na jasnym tle (kontrast 6,2:1) */
+
+  /* Tekst i tła */
+  --nb-tekst: #292728;              /* podstawowy tekst strony */
+  --nb-tekst-drugi: #5A5A5A;        /* opisy, podpisy (kontrast 6,9:1 na białym) */
+  --nb-tlo: #FFFFFF;
+  --nb-tlo-cieple: #F3F0EB;         /* bloki wyróżnione, stopka */
+  --nb-tlo-szare: #EBEBEB;          /* przycisk „Wyszukaj” w nagłówku, tła pomocnicze */
+  --nb-ramka: #E4DED5;
+
+  /* Delikatne tła ilustracji i kart */
+  --nb-pomarancz-jasny: #FDEEE4;
+  --nb-zielen-jasna: #EAF6F1;
+
+  /* Typografia */
+  --nb-czcionka: "Hind Vadodara", system-ui, sans-serif;
+}

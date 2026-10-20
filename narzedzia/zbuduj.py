@@ -1,5 +1,7 @@
 """Składa strony makiety z szablonu (nagłówek, stopka) i plików w strony/.
 
+Kolory i czcionki kopiuje z branding/tokeny.css, logo z logo/bocian_stopka.png.
+
 strony/index.html trafia do index.html w katalogu głównym,
 strony/<nazwa>.html do <nazwa>/index.html.
 Tytuł strony bierze się z pierwszej linii pliku: <!-- tytul: ... -->
@@ -7,9 +9,12 @@ Tytuł strony bierze się z pierwszej linii pliku: <!-- tytul: ... -->
 Użycie: python3 narzedzia/zbuduj.py
 """
 import re
+import shutil
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
+# Branding i logo trzymamy w repo Nasz Bocian (psycho/nasz-bocian), tu tylko kopie.
+NASZ_BOCIAN = ROOT.parent.parent
 
 STRONA = """<!doctype html>
 <html lang="pl">
@@ -19,6 +24,7 @@ STRONA = """<!doctype html>
 <meta name="robots" content="noindex, nofollow">
 <title>{tytul} | Nasz Bocian (makieta)</title>
 <link rel="icon" href="https://nasz-bocian.pl/sites/default/files/favi.png">
+<link rel="stylesheet" href="{root}assets/branding.css">
 <link rel="stylesheet" href="{root}assets/makieta.css">
 <script src="{root}assets/makieta.js" defer></script>
 </head>
@@ -36,6 +42,9 @@ def czytaj(sciezka):
 
 
 def zbuduj():
+    shutil.copyfile(NASZ_BOCIAN / "branding" / "tokeny.css", ROOT / "assets" / "branding.css")
+    shutil.copyfile(NASZ_BOCIAN / "logo" / "bocian_stopka.png", ROOT / "assets" / "logo.png")
+
     naglowek = czytaj("szablon/naglowek.html")
     stopka = czytaj("szablon/stopka.html").replace("{{social}}", czytaj("szablon/_social.html"))
 

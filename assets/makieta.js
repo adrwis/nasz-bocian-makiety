@@ -7,5 +7,15 @@ document.addEventListener('DOMContentLoaded', () => {
     przycisk.setAttribute('aria-expanded', String(otwarte));
   });
 
-  document.querySelector('.szukaj').addEventListener('submit', (e) => e.preventDefault());
+  const szukaj = document.getElementById('szukaj');
+  if (!szukaj) return;
+  szukaj.addEventListener('submit', (e) => e.preventDefault());
+
+  // „Wyszukaj” w nagłówku na stronie głównej przewija do pola i ustawia w nim kursor.
+  document.querySelector('.naglowek__szukaj').addEventListener('click', (e) => {
+    e.preventDefault();
+    szukaj.scrollIntoView({ behavior: 'smooth' });
+    document.getElementById('szukaj-pole').focus({ preventScroll: true });
+  });
+  if (location.hash === '#szukaj') document.getElementById('szukaj-pole').focus();
 });

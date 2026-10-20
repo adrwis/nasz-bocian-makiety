@@ -2,18 +2,21 @@
 <main class="tresc" id="tresc">
   <div class="wnetrze">
     <h1>Jak możemy Ci pomóc?</h1>
-    <p class="wstep">Wybierz, czego teraz potrzebujesz.</p>
+
+    <form class="szukaj" id="szukaj" role="search" action="#">
+      <label class="szukaj__etykieta" for="szukaj-pole">Szukaj na stronie</label>
+      <svg class="szukaj__ikona" viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5 21 21"/></svg>
+      <input id="szukaj-pole" type="search" placeholder="Napisz, czego szukasz" autocomplete="off">
+      <button type="submit">Szukaj</button>
+    </form>
+    <p class="szukaj__podpowiedz">Na przykład: in vitro, adopcja, AMH, grupa wsparcia</p>
+
+    <p class="wstep">Albo wybierz, czego teraz potrzebujesz:</p>
 
     <div class="kafle">
-      <a class="kafel kafel--informacje" href="{{root}}szukam-informacji/">
-        <div class="kafel__obraz" aria-hidden="true">
-          <svg viewBox="0 0 120 100" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M14 26c12-6 26-6 38 2v52c-12-8-26-8-38-2z"/>
-            <path d="M90 26c-12-6-26-6-38 2v52c12-8 26-8 38-2z"/>
-            <path d="M22 40h20M22 50h20M22 60h14M62 40h20M62 50h14"/>
-            <circle cx="88" cy="62" r="13" fill="#fff"/>
-            <path d="M97.5 71.5 108 82"/>
-          </svg>
+      <a class="kafel" href="{{root}}szukam-informacji/">
+        <div class="kafel__zdjecie">
+          <img src="https://nasz-bocian.pl/sites/default/files/styles/original/public/2019-11/4854.jpg?itok=8cjJEGkt" width="1200" height="883" alt="" loading="lazy">
         </div>
         <div class="kafel__tekst">
           <h2>Szukam informacji</h2>
@@ -23,12 +26,8 @@
       </a>
 
       <a class="kafel kafel--wsparcie" href="{{root}}linia-pomocy/">
-        <div class="kafel__obraz" aria-hidden="true">
-          <svg viewBox="0 0 120 100" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M18 22h56a8 8 0 0 1 8 8v30a8 8 0 0 1-8 8H44l-14 12V68H18a8 8 0 0 1-8-8V30a8 8 0 0 1 8-8z"/>
-            <path d="M46 58s-14-8-14-17a7 7 0 0 1 14-2 7 7 0 0 1 14 2c0 9-14 17-14 17z" fill="#fff"/>
-            <path d="M88 40h14a8 8 0 0 1 8 8v22a8 8 0 0 1-8 8h-4v10l-12-10h-6"/>
-          </svg>
+        <div class="kafel__zdjecie">
+          <img src="https://nasz-bocian.pl/sites/default/files/styles/original/public/2019-11/2313313.jpg?itok=_ZJ8NCUt" width="1200" height="801" alt="" loading="lazy">
         </div>
         <div class="kafel__tekst">
           <h2>Potrzebuję wsparcia</h2>
@@ -37,19 +36,12 @@
         <span class="kafel__przycisk">Zadzwoń lub napisz</span>
       </a>
 
-      <a class="kafel kafel--ekspert" href="{{root}}kontakt/">
-        <div class="kafel__obraz" aria-hidden="true">
-          <svg viewBox="0 0 120 100" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-            <circle cx="44" cy="34" r="14"/>
-            <path d="M16 86c2-18 14-28 28-28s26 10 28 28"/>
-            <path d="M34 60v10a10 10 0 0 0 20 0"/>
-            <circle cx="54" cy="74" r="3"/>
-            <path d="M80 18h22a6 6 0 0 1 6 6v16a6 6 0 0 1-6 6h-10l-10 8v-8h-2a6 6 0 0 1-6-6V24a6 6 0 0 1 6-6z"/>
-            <path d="M86 30h16M86 36h10"/>
-          </svg>
+      <a class="kafel" href="{{root}}kontakt/">
+        <div class="kafel__zdjecie">
+          <img src="https://nasz-bocian.pl/sites/default/files/styles/original/public/2019-11/7781.jpg?itok=UXcBDPQe" width="1200" height="800" alt="" loading="lazy">
         </div>
         <div class="kafel__tekst">
-          <h2>Chcę porozmawiać z ekspertem</h2>
+          <h2>Chcę porozmawiać z&nbsp;ekspertem</h2>
           <p>Napisz albo zadzwoń do Stowarzyszenia. Podpowiemy, gdzie szukać pomocy specjalisty.</p>
         </div>
         <span class="kafel__przycisk">Skontaktuj się</span>
