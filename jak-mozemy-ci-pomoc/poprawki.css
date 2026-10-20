@@ -1,0 +1,141 @@
+/*
+ * Poprawki CSS dla strony /jak-mozemy-ci-pomoc (Nasz Bocian, motyw naszbocian).
+ * Do wklejenia na końcu arkusza motywu albo w module typu „CSS injector”.
+ * Każda sekcja działa niezależnie, można wdrażać po kolei.
+ * Selektory zawężone do kafli .block--promo-block i nowych bloków,
+ * żeby nie zmienić innych stron. Wyjątek: sekcja 1 (puste okruszki) działa w całym serwisie.
+ */
+
+/* 1. Pusty szary pasek okruszków.
+ * Na 789 z 834 stron okruszki są puste, a pasek i tak się wyświetla.
+ * Chowamy go tylko wtedy, gdy nie ma w nim żadnego linku. Zostaje dolny
+ * margines (.mb-50), żeby tytuł strony nie przykleił się do menu. */
+.breadcrumbs__wrapper:not(:has(.breadcrumbs a)) {
+  height: 0;
+  padding: 0;
+  overflow: hidden;
+  background: none;
+}
+
+/* 2. Kafle jako karty: zdjęcie na górze, tekst pod nim na białym tle.
+ * Dotąd tekst leżał na zdjęciu (przecinał twarze), a na telefonie
+ * wychodził poza kafel i przykrywał przycisk następnej karty. */
+.item--33 {
+  display: flex;
+}
+.block--promo-block {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 14px rgba(0, 0, 0, 0.08);
+}
+.block--promo-block .background {
+  padding-bottom: 52%;
+}
+.block--promo-block .content {
+  position: static;
+  flex: 1;
+  height: auto;
+  align-items: flex-start;
+}
+.block--promo-block .content .content__header h2 {
+  background: none;
+  padding: 24px 24px 0;
+  margin-bottom: 12px;
+  line-height: 1.05;
+}
+.block--promo-block .content .content__header p {
+  padding: 0 24px 20px;
+  line-height: 1.5;
+}
+.block--promo-block .btn {
+  margin: 0 24px 24px;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+}
+@media screen and (max-width: 992px) {
+  .item--33 + .item--33 {
+    margin-top: 16px;
+  }
+  .block--promo-block .background {
+    padding-bottom: 42%;
+  }
+}
+
+/* 3. Kontrast przycisków w kaflach.
+ * Biały tekst na #1eaa78 ma kontrast 2,97:1, na #f36717 3,1:1 (norma WCAG: 4,5:1).
+ * Ciemniejsze odcienie tych samych kolorów: 4,93:1 i 4,94:1. */
+.block--promo-block .btn--green {
+  background-color: #12805a;
+}
+.block--promo-block .content:hover .btn--green {
+  background-color: #0e6a4a;
+}
+.block--promo-block .btn--orange {
+  background-color: #c2490a;
+}
+.block--promo-block .content:hover .btn--orange {
+  background-color: #a33d08;
+}
+
+/* 4. Zdanie pod tytułem strony. */
+.pomoc-wstep {
+  font-size: 1.15rem;
+  margin: -0.5rem 0 1.5rem;
+  color: #333;
+}
+
+/* 5. Blok „Potrzebujesz pomocy od razu?” z numerami kryzysowymi. */
+.pomoc-teraz {
+  margin: 8px 0 60px;
+  padding: 24px 28px;
+  background: #f3f0eb;
+  border-left: 5px solid #0f6e56;
+  border-radius: 8px;
+}
+.pomoc-teraz h2 {
+  margin: 0 0 8px;
+  font-size: 1.4rem;
+  text-transform: none;
+}
+.pomoc-teraz p {
+  margin: 0 0 12px;
+  line-height: 1.5;
+}
+.pomoc-teraz ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.pomoc-teraz li {
+  margin: 0 0 8px;
+  padding-left: 0;
+  line-height: 1.4;
+}
+.pomoc-teraz li::before {
+  display: none;
+}
+.pomoc-teraz a[href^="tel:"] {
+  display: inline-block;
+  min-width: 7.5em;
+  padding: 6px 0;
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: #0f6e56;
+}
+@media screen and (max-width: 576px) {
+  .pomoc-teraz {
+    padding: 20px;
+  }
+  .pomoc-teraz li {
+    margin-bottom: 14px;
+  }
+  .pomoc-teraz a[href^="tel:"] {
+    display: block;
+    padding: 4px 0 0;
+  }
+}
