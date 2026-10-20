@@ -27,6 +27,26 @@ DOKUMENTY = {
 }
 W_MAKIECIE = {sciezka: slug for slug, sciezka in DOKUMENTY.items()}
 
+# Poprawki błędów w oryginałach: (stary tekst, nowy tekst, opis). Te same zmiany trzeba wprowadzić
+# na nasz-bocian.pl, lista dla redaktora: dokumenty/poprawki-tekstow.md (tworzy ją ten skrypt).
+ODPIS = ("odpisów 1% podatku", "odpisów 1,5% podatku", "Od 2023 roku odpis wynosi 1,5% podatku, nie 1%.")
+POPRAWKI = {
+    "ogloszenia-nieodplatne": [ODPIS],
+    "wspolpraca-z-biznesem": [ODPIS],
+    "wspolpraca-z-partiami-politycznymi": [ODPIS],
+    "regulamin-platnosci": [(
+        "W przypadku wystąpienia konieczność zwrotu środków za transakcję dokonaną przez wpłacającego kartą płatniczą przyjmujący wpłatę dokonana zwrotu",
+        "W przypadku wystąpienia konieczności zwrotu środków za transakcję dokonaną przez Wpłacającego kartą płatniczą przyjmujący wpłatę dokona zwrotu",
+        "Błędy gramatyczne: „konieczność” zamiast „konieczności”, „dokonana” zamiast „dokona”; „Wpłacającego” wielką literą jak dalej w zdaniu.",
+    )],
+    "reklamy": [
+        ("artkuł sponsorowany", "artykuł sponsorowany", "Literówka."),
+        ("POLITYKA PUBLIKACJI TREŚCI O CHARAKTERZE REKLAMOWYM NA PORTALU NASZ-BOCIAN.PL ORAZ W MEDIACH SPOŁECZNOŚCIOWYCH STOWARZYSZENIA NASZ BOCIAN",
+         "Polityka publikacji treści o charakterze reklamowym na portalu nasz-bocian.pl oraz w mediach społecznościowych Stowarzyszenia NASZ BOCIAN",
+         "Tytuł strony zapisany w całości wersalikami, inaczej niż pozostałe tytuły."),
+    ],
+}
+
 DOZWOLONE = {"p", "br", "h2", "h3", "h4", "ul", "ol", "li", "a", "strong", "b", "em", "i", "img"}
 PUSTE = {"br", "img"}
 
@@ -118,8 +138,23 @@ def tresc_artykulu(strona):
     return tytul, tekst, [(i, re.sub(r"\s+", " ", "".join(t)).strip()) for i, t in c.naglowki]
 
 
+def popraw(slug, tytul, tekst):
+    for stary, nowy, _ in POPRAWKI.get(slug, []):
+        if stary not in tytul and stary not in tekst:
+            raise SystemExit(f"{slug}: nie znaleziono tekstu do poprawy: {stary[:60]}")
+        tytul, tekst = tytul.replace(stary, nowy), tekst.replace(stary, nowy)
+    return tytul, tekst
+
+
 def zapisz(slug, sciezka):
     tytul, tekst, naglowki = tresc_artykulu(pobierz(PROD + sciezka))
+    tytul, tekst = popraw(slug, tytul, tekst)
+    oryginal = f'<a href="{PROD}{sciezka}" target="_blank" rel="noopener">nasz-bocian.pl{html.escape(sciezka)}</a>'
+    if slug in POPRAWKI:
+        zrodlo = (f"Tekst przeniesiony z {oryginal}, z poprawionymi błędami "
+                  '(<a href="https://github.com/adrwis/nasz-bocian-makiety/blob/main/dokumenty/poprawki-tekstow.md">lista poprawek</a>).')
+    else:
+        zrodlo = f"Tekst przeniesiony bez zmian z {oryginal}."
     spis = ""
     if len(naglowki) >= 3:
         pozycje = "\n".join(f'          <li><a href="#{i}">{html.escape(t)}</a></li>' for i, t in naglowki)
@@ -138,7 +173,7 @@ def zapisz(slug, sciezka):
 {spis}      <div class="dokument__tresc">
 {tekst}
       </div>
-      <p class="dokument__zrodlo">Tekst przeniesiony bez zmian z <a href="{PROD}{sciezka}" target="_blank" rel="noopener">nasz-bocian.pl{html.escape(sciezka)}</a>.</p>
+      <p class="dokument__zrodlo">{zrodlo}</p>
     </article>
   </div>
 </main>
@@ -147,6 +182,26 @@ def zapisz(slug, sciezka):
     print(f"{slug}: {tytul} ({len(re.sub(r'<[^>]+>', '', tekst))} znaków, spis: {len(naglowki) >= 3})")
 
 
+def lista_dla_redaktora():
+    wiersze = []
+    for slug, poprawki in POPRAWKI.items():
+        for stary, nowy, opis in poprawki:
+            wiersze.append(f"| [{slug}]({PROD}{DOKUMENTY[slug]}) | {stary} | {nowy} | {opis} |")
+    tresc = f"""# Poprawki tekstów na nasz-bocian.pl
+
+Błędy znalezione w tekstach stron ze stopki. W makiecie są już poprawione. Na produkcji trzeba je
+zmienić w panelu: otworzyć stronę, „Edytuj”, znaleźć stary tekst (Ctrl+F), wpisać nowy, zapisać.
+
+| Strona | Jest | Ma być | Dlaczego |
+|---|---|---|---|
+""" + "\n".join(wiersze) + """
+
+Polityka prywatności („Zasady korzystania z serwisu”) wymaga napisania od nowa, nie poprawki. Opis w ZMIANY.md.
+"""
+    (ROOT / "dokumenty" / "poprawki-tekstow.md").write_text(tresc, encoding="utf-8")
+
+
 if __name__ == "__main__":
     for slug, sciezka in DOKUMENTY.items():
         zapisz(slug, sciezka)
+    lista_dla_redaktora()

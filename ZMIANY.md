@@ -8,6 +8,12 @@ Co zrobiłyśmy, co jest w toku i co dalej. Najnowsze na górze. Statusy: **zrob
 - Klikalne: kafelki i pozycje menu (strony „w przygotowaniu”), logo, „Wyszukaj” (rozwija pole), numery kryzysowe, cała stopka (linki do nasz-bocian.pl, zbiórek i mediów społecznościowych). Reszta (menu, wyszukiwarka, stopka) jest widoczna, ale wyłączona.
 - Strona główna makiety to strona z 3 kafelkami („Jak możemy Ci pomóc?”).
 
+## 2026-10-21, poprawki tekstów
+
+| # | Uwaga Ady | Co robimy | Status |
+|---|---|---|---|
+| 25 | Poprawić wypisane błędy w tekstach. | Poprawki wpisane do skryptu `narzedzia/dokumenty.py` (lista POPRAWKI), więc nie znikną przy ponownym pobraniu tekstów. Skrypt tworzy `dokumenty/poprawki-tekstow.md` z tabelą „jest / ma być” dla redaktora. Na dole poprawionych stron dopisek z linkiem do listy poprawek. Polityki prywatności nie da się poprawić drobną zmianą, patrz „Błędy w oryginalnych tekstach”. | zrobione |
+
 ## 2026-10-21, strony ze stopki
 
 | # | Uwaga Ady | Co robimy | Status |
@@ -77,16 +83,16 @@ Co zrobiłyśmy, co jest w toku i co dalej. Najnowsze na górze. Statusy: **zrob
 | Doprecyzować `dokumenty/jak-mozemy-ci-pomoc/dla-redaktora.md` po screenach formularza edycji z dev | do zrobienia |
 | Po akceptacji wyglądu przygotować CSS dla programisty pod nowy nagłówek, kafle i stopkę (obecny `poprawki.css` dotyczy pierwszej wersji) | do zrobienia |
 
-## Błędy w oryginalnych tekstach (do poprawy na produkcji)
+## Błędy w oryginalnych tekstach
 
-Teksty w makiecie są przeniesione bez zmian, więc te błędy są też w makiecie.
+W makiecie poprawione 2026-10-21 (uwaga 25). Na nasz-bocian.pl trzeba je poprawić w panelu: gotowa lista „jest / ma być” w `dokumenty/poprawki-tekstow.md`.
 
-| Strona | Problem |
-|---|---|
-| Zasady korzystania z serwisu | To jedyna „Polityka prywatności” na stronie (link z banera cookies), a opisuje głównie forum, którego już nie ma (przekierowuje na stronę główną). „Ostatnia aktualizacja: 25.05.2018.” Nie opisuje Google Analytics, Meta Pixel, MailerLite ani FaniMani, o których mówi baner cookies. Do aktualizacji, najlepiej z prawnikiem. |
-| Ogłoszenia nieodpłatne, Współpraca z biznesem, Współpraca z partiami | „odpisów 1% podatku”: od 2023 roku jest 1,5%. |
-| Regulamin wpłat FaniPay | Zdanie z błędami: „W przypadku wystąpienia konieczność zwrotu… przyjmujący wpłatę dokonana zwrotu”. Powinno być np. „W przypadku konieczności zwrotu… przyjmujący wpłatę dokona zwrotu”. |
-| Reklamy | Literówka „artkuł sponsorowany”. Tytuł strony w całości wersalikami (w źródle). |
+| Strona | Problem | Status |
+|---|---|---|
+| Zasady korzystania z serwisu | To jedyna „Polityka prywatności” na stronie (link z banera cookies), a opisuje głównie forum, którego już nie ma (przekierowuje na stronę główną). „Ostatnia aktualizacja: 25.05.2018.” Nie opisuje Google Analytics, Meta Pixel, MailerLite ani FaniMani, o których mówi baner cookies. | do decyzji: nowa polityka prywatności, z prawnikiem |
+| Ogłoszenia nieodpłatne, Współpraca z biznesem, Współpraca z partiami | „odpisów 1% podatku”: od 2023 roku jest 1,5%. | poprawione w makiecie |
+| Regulamin wpłat FaniPay | „W przypadku wystąpienia konieczność zwrotu… przyjmujący wpłatę dokonana zwrotu”: zmienione na „konieczności”, „dokona”. | poprawione w makiecie |
+| Reklamy | Literówka „artkuł sponsorowany”. Tytuł w całości wersalikami, zmieniony na zwykłą pisownię jak w pozostałych dokumentach. | poprawione w makiecie |
 
 ## Do decyzji
 
